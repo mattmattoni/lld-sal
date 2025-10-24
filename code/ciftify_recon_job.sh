@@ -24,7 +24,7 @@ mkdir -p $HCP_DIR
 
 echo "Running ciftify_recon_all for subject: $SUBJECT_ID"
 
-apptainer exec --cleanenv --bind $PROJECT_DIR:/data $CIFTIFY_IMG \
+apptainer exec --bind $PROJECT_DIR:/data $CIFTIFY_IMG \
   ciftify_recon_all SUBJ \
     --fs-subjects-dir /data/$FS_SITE/$SUBJECT_ID \
     --ciftify-work-dir /data/rembrandt_hcp \
