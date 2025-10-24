@@ -26,7 +26,7 @@ echo "Running ciftify_recon_all for subject: $SUBJECT_ID"
 
 apptainer run --bind "$PROJECT_DIR":/data "$CIFTIFY_IMG" \
   ciftify_recon_all SUBJ \
-    --fs-subjects-dir /data/"$FS_SITE"/"$SUBJECT_DIR" \
+    --fs-subjects-dir /data/"$FS_SITE"/"$SUBJECT_ID" \
     --ciftify-work-dir /data/rembrandt_hcp \
     --surf-reg FS
 
