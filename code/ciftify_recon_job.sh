@@ -25,9 +25,10 @@ mkdir -p $HCP_DIR
 echo "Running ciftify_recon_all for subject: $SUBJECT_ID"
 
 apptainer exec --bind $PROJECT_DIR:/data $CIFTIFY_IMG \
-  ciftify_recon_all SUBJ \
+  python3 /home/code/ciftify/ciftify/bin/ciftify_recon_all.py SUBJ \
     --fs-subjects-dir /data/$FS_SITE/$SUBJECT_ID \
     --ciftify-work-dir /data/rembrandt_hcp \
     --surf-reg FS
+
 
 echo "Done with $SUBJECT_ID"
