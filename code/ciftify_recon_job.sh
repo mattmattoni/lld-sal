@@ -9,7 +9,7 @@
 #SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.e
 #SBATCH --mail-user=mattonim@uic.edu
 
-rm /projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_*.*
+rm -f /projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_*.*
 
 module load apptainer
 
@@ -23,7 +23,7 @@ mkdir -p $HCP_DIR
 
 echo "Running ciftify_recon_all for subject: $SUBJECT_ID"
 
-apptainer exec --cleanenv --bind $PROJECT_DIR:data $CIFTIFY_IMG \
+apptainer exec --cleanenv --bind $PROJECT_DIR:/data $CIFTIFY_IMG \
   ciftify_recon_all SUBJ \
     --fs-subjects-dir data/$FS_SITE \
     --ciftify-work-dir $HCP_DIR \
