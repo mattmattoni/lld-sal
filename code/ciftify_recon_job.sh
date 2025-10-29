@@ -26,7 +26,7 @@ singularity exec --bind "$PROJECT_DIR":/data "$CIFTIFY_IMG" \
   /home/code/ciftify/ciftify/bin/ciftify_recon_all SUBJ \
     --fs-subjects-dir /data/"$FS_SITE"/"$SUBJECT_ID" \
     --ciftify-work-dir /data/rembrandt_hcp \
-    --surf-reg FS
-
+    --surf-reg FS \
+    --fs-license /projects/psych_oajilore_chi/mattonim/lld-sal/license.txt
 
 echo "Done with $SUBJECT_ID"
