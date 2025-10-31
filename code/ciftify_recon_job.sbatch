@@ -22,7 +22,7 @@ echo "Running ciftify_recon_all for subject: $SUBJECT_ID"
 
 singularity exec --bind "$PROJECT_DIR":/data --bind /projects/psych_oajilore_chi/mattonim/lld-sal:/githome "$CIFTIFY_IMG" \
   /home/code/ciftify/ciftify/bin/ciftify_recon_all $SUBJECT_ID \
-    --fs-subjects-dir /data/"$FS_SITE \
+    --fs-subjects-dir /data/"$FS_SITE" \
     --ciftify-work-dir /data/data_hcp \
     --surf-reg FS \
     --fs-license /githome/license.txt
