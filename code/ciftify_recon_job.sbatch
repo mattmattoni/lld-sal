@@ -9,6 +9,7 @@
 #SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.e
 #SBATCH --mail-user=mattonim@uic.edu
 
+source /etc/profile.d/modules.sh
 module load singularity
 
 CIFTIFY_IMG=/projects/psych_oajilore_chi/mattonim/tigrlab_fmriprep_ciftify_latest-2019-08-16-454dd291e09f.simg
