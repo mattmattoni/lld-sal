@@ -11,12 +11,10 @@
 
 module load singularity
 
-rm -f /projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_*.*
-
 CIFTIFY_IMG=/projects/psych_oajilore_chi/mattonim/tigrlab_fmriprep_ciftify_latest-2019-08-16-454dd291e09f.simg
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
 FS_SITE=REMBRANDT-FS7_v1-Baseline-VUMC 
-SUBJECT_ID=REMBRANDT-x-14180-x-14180a-x-FS7_v1-x-d517c7dd
+SUBJECT_ID=14180
 
 mkdir -p /projects/psych_oajilore_chi/mattonim/rembrandt/data_hcp
 
