@@ -11,6 +11,8 @@
 
 export PATH=$HOME/.local/bin:$PATH
 
+module load parallel/20230722-GCCcore-12.2.0
+
 CIFTIFY_IMG=/projects/psych_oajilore_chi/mattonim/tigrlab_fmriprep_ciftify_latest-2019-08-16-454dd291e09f.simg
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
 FMRI_SITE=Baseline-fMRI_REST1-VUMC 
