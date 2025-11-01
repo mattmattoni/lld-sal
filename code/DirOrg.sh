@@ -21,3 +21,5 @@ done
 
 #Clean Sub IDs in functional data
 cd $FMRI_DIR
+
+#Add task name
