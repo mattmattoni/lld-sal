@@ -5,11 +5,10 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=15
 #SBATCH --mem=5G
-#SBATCH --time=01:00:00
+#SBATCH --time=04:00:00
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.log
 #SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.e
-#SBATCH --mail-user=mattonim@uic.edu
-#SBATCH --mail-type=END,FAIL
+
 
 export PATH=$HOME/.local/bin:$PATH
 module load parallel/20230722-GCCcore-12.2.0
@@ -30,7 +29,7 @@ process_subject() {
       /home/code/ciftify/ciftify/bin/ciftify_recon_all $SUBJECT_ID \
         --fs-subjects-dir /data/"$FS_SITE" \
         --ciftify-work-dir /data/data_hcp \
-        --surf-reg FS \
+        --surf-reg MSMSulc \
         --fs-license /githome/license.txt
     
     echo "[$(date)] Completed subject: $SUBJECT_ID"
