@@ -28,7 +28,7 @@ singularity exec --bind "$PROJECT_DIR":/data \
                  --bind /projects/psych_oajilore_chi/mattonim/lld-sal:/githome \
                  "$CIFTIFY_IMG" \
   /home/code/ciftify/ciftify/bin/ciftify_subject_fmri \
-    data/"$FUNC_NIFTI" \
+    /data/"$FUNC_NIFTI" \
     "$SUBJECT_ID" \
     "$FUNC_LABEL" \
     --ciftify-work-dir /data/data_hcp \
