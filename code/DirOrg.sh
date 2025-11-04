@@ -24,5 +24,6 @@ cd $FMRI_DIR
 for dir in REMBRANDT-x-*; do
   cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
   echo mv "$dir" "$cleandir"
+done
 
 #Add task name
