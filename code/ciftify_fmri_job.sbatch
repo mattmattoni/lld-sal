@@ -1,13 +1,12 @@
 #!/bin/bash
 
 #SBATCH --partition=batch
-#SBATCH --job-name=ciftify_func_5mm
+#SBATCH --job-name=ciftify_func
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=10
+#SBATCH --ntasks=15
 #SBATCH --time=4:00:00
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/ciftify_func_%j.log
 #SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/ciftify_func_%j.e
-#SBATCH --mail-user=mattonim@uic.edu
 
 export PATH=$HOME/.local/bin:$PATH
 
@@ -15,9 +14,11 @@ module load parallel/20230722-GCCcore-12.2.0
 
 CIFTIFY_IMG=/projects/psych_oajilore_chi/mattonim/tigrlab_fmriprep_ciftify_latest-2019-08-16-454dd291e09f.simg
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
+FS_SITE=REMBRANDT-FS7_v1-Baseline-VUMC 
 FMRI_SITE=Baseline-fMRI_REST1-VUMC 
+FUNC_LABEL=rest-1
 SUBJECT_ID=14180
-FUNC_NIFTI=/func_preproc.nii.gz
+FUNC_NIFTI=$FMRI_SITE/$SUBJECT_ID/PREPROC/wbet_rtaREST.nii.gz
 
 echo "Running ciftify_subject_fmri for subject: $SUBJECT_ID"
 
@@ -25,14 +26,11 @@ singularity exec --bind "$PROJECT_DIR":/data \
                  --bind /projects/psych_oajilore_chi/mattonim/lld-sal:/githome \
                  "$CIFTIFY_IMG" \
   /home/code/ciftify/ciftify/bin/ciftify_subject_fmri \
-    "$FUNC_NIFTI" \
+    data/"$FUNC_NIFTI" \
     "$SUBJECT_ID" \
     "$FUNC_LABEL" \
-    --fs-subjects-dir /data/"$FMRI_SITE" \
     --ciftify-work-dir /data/data_hcp \
-    --surf-reg FS \
-    --smoothing-fwhm 5 \
-    --n_cpus 10 \
-    --fs-license /githome/license.txt
+    --surf-reg MSMSulc \
+    --SmoothingFWHM 6
 
 echo "Done with $SUBJECT_ID"
