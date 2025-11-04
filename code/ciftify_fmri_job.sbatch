@@ -20,6 +20,8 @@ FUNC_LABEL=rest-1
 SUBJECT_ID=14180
 FUNC_NIFTI=$FMRI_SITE/$SUBJECT_ID/PREPROC/wbet_rtaREST.nii.gz
 
+export CIFTIFY_IMG PROJECT_DIR FS_SITE
+
 echo "Running ciftify_subject_fmri for subject: $SUBJECT_ID"
 
 singularity exec --bind "$PROJECT_DIR":/data \
