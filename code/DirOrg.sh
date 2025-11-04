@@ -23,7 +23,7 @@ FMRI_DIR=$PROJECT_DIR/Baseline-fMRI_REST1-VUMC
 cd $FMRI_DIR
 for dir in REMBRANDT-x-*; do
   cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
-  echo mv "$dir" "$cleandir"
+  mv "$dir" "$cleandir"
 done
 
 #Add task name
