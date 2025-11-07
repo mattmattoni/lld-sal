@@ -15,8 +15,8 @@ module load parallel/20230722-GCCcore-12.2.0
 CIFTIFY_IMG=/projects/psych_oajilore_chi/mattonim/tigrlab_fmriprep_ciftify_latest-2019-08-16-454dd291e09f.simg
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
 FS_SITE=REMBRANDT-FS7_v1-Baseline-VUMC 
-FMRI_SITE=Baseline-fMRI_REST1-VUMC 
-FUNC_LABEL=rest-1
+FMRI_SITE=Baseline-fMRI_REST2-VUMC 
+FUNC_LABEL=rest-2
 
 export CIFTIFY_IMG PROJECT_DIR FS_SITE FMRI_SITE
 
