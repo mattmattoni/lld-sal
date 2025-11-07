@@ -14,7 +14,7 @@ nWorkers = 5;
 
 % define subject directory and name;
 Subject = '14180';
-Subdir = ['/home/mattonim/psych_oajilore_chi_link/rembrandt/data_hcp/' Subject];
+Subdir = ['/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/' Subject];
 
 
 % define & create the pfm directory;
