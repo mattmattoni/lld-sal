@@ -14,6 +14,6 @@ WB=/home/mattonim/workbench
 export LD_LIBRARY_PATH=$WB/libs_linux64:$LD_LIBRARY_PATH
 module load matlab/2024b
 
-MATLAB_SCRIPT=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/PFM-Tutorial/PFM_singlesub.m
+MATLAB_SCRIPT=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/PFM_singlesub.m
 
 matlab -nodisplay -nosplash -r "try, run('$MATLAB_SCRIPT'); catch ME, disp(ME.message); end; exit"
