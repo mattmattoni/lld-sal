@@ -1,7 +1,7 @@
 %% Environment
 
 % add dependencies to Matlab search path
-addpath(genpath('/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/PFM-Tutorial/Utilities']));
+addpath(genpath(['/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/PFM-Tutorial/Utilities']));
 
 % define path to some software packages that will be needed
 InfoMapBinary = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/infomap'; 
