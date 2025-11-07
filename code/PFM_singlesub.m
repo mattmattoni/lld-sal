@@ -7,7 +7,7 @@ addpath(genpath('/mmfs1/projects/psych_oajilore_chi/mattonim/lld-sal/code/cifti-
 
 % define path to some software packages that will be needed
 InfoMapBinary = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/infomap'; 
-WorkbenchBinary = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/workbench/bin_linux64/wb_command'; 
+WorkbenchBinary = '/home/mattonim/workbench/bin_linux64/wb_command'; 
 
 % number of workers
 nWorkers = 5;
