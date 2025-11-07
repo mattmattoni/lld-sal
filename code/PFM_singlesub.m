@@ -2,6 +2,8 @@
 
 % add dependencies to Matlab search path
 addpath(genpath(['/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/PFM-Tutorial/Utilities']));
+addpath(genpath('/mmfs1/projects/psych_oajilore_chi/mattonim/lld-sal/code/cifti-matlab-master'));
+
 
 % define path to some software packages that will be needed
 InfoMapBinary = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/infomap'; 
@@ -22,7 +24,7 @@ PfmDir = [Subdir '/pfm/'];
 mkdir(PfmDir);
 
 % count the number of imaging sessions;
-nSessions = 1
+nSessions = 1;
 
 % preallocate;
 ConcatenatedData = [];
