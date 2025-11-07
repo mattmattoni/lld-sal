@@ -3,7 +3,7 @@ PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
 
 #FS_DIR = 
 
-FMRI_DIR=$PROJECT_DIR/Baseline-fMRI_REST1-VUMC 
+FMRI_DIR=$PROJECT_DIR/Baseline-fMRI_REST2-VUMC 
 
 
 #Remove SUBJ subdir in FS
