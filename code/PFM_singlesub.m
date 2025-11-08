@@ -68,7 +68,7 @@ pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); 
 [ConcatenatedCifti] = pfm_regress_adjacent_cortex(ConcatenatedCifti,[PfmDir '/DistanceMatrix.mat'],20);
 
 % write out the CIFTI file;
-ft_write_cifti_mod([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti);
+ft_write_cifti([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti);
 
 %% Step 3: Smoothing (Done in ciftify)
 
