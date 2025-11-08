@@ -3,11 +3,11 @@
 #SBATCH --partition=batch
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=5
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=32G
 #SBATCH --time=04:00:00
 #SBATCH --output=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/pfm_%j.log
 #SBATCH --error=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/pfm_%j.err
-
 
 # Set up environment
 WB=/home/mattonim/workbench
