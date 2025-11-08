@@ -5,8 +5,8 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=5
 #SBATCH --time=04:00:00
-#SBATCH --output=/scratch/%u/pfm_%j.log
-#SBATCH --error=/scratch/%u/pfm_%j.err
+#SBATCH --output=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/pfm_%j.log
+#SBATCH --error=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/pfm_%j.err
 
 
 # Set up environment
