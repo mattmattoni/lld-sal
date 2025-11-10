@@ -25,51 +25,51 @@ PfmDir = [Subdir '/pfm/'];
 mkdir(PfmDir);
 
 % count the number of imaging sessions;
-%nSessions = 1;
-%
-%% preallocate;
-%ConcatenatedData = [];
-%
-%% sweep through the sessions;
-%for i = 1:nSessions
-%    
-%    % count the number of runs in this session
-%    nRuns = length(dir([Subdir '/MNINonLinear/Results/rest*']));
-%    
-%    % sweep through the runs;
-%    for ii = 1:nRuns
-%        
-%        % load the denoised & fs_lr_32k surface-registered CIFTI file for run "ii" from session "i"...
-%        Cifti = ft_read_cifti([Subdir '/MNINonLinear/Results/rest-' num2str(ii) '/rest-' num2str(ii) '_Atlas_s0.dtseries.nii']);
-%        Cifti.data = Cifti.dtseries - mean(Cifti.dtseries,2); % demean
-%        %Tmask = load([Subdir '/processed_restingstate_timecourses/ses-func' sprintf('%02d',i) '/sub-' Subject '_ses-func' sprintf('%02d',i) '_task-rest_run-' sprintf('%02d',ii) '_bold_32k_fsLR_tmask.txt']);
-%        %ConcatenatedData = [ConcatenatedData Cifti.data(:,Tmask==1)]; % 1 (Low motion timepoints) == FD < 0.3mm, 0 (High motion timepoints) == FD > 0.3mm
-%        ConcatenatedData = [ConcatenatedData Cifti.data];
-%
-%    end
-%    
-%end
-%
-%% make a single CIFTI containing time-series from all scans;
-%ConcatenatedCifti = Cifti;
-%ConcatenatedCifti.data = ConcatenatedData;
-%
-%
-%%% Step 2: Make a distance matrix.
-%
-%% define fs_lr_32k midthickness surfaces;
-%MidthickSurfs{1} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.L.midthickness.32k_fs_LR.surf.gii'];
-%MidthickSurfs{2} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.R.midthickness.32k_fs_LR.surf.gii'];
-%
-%% make the distance matrix;
-%pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
-%
-%% optional: regress adjacent cortical signal from subcortex to reduce artifactual coupling
-%% (for example, between cerebellum and visual cortex, or between putamen and insular cortex)
-%[ConcatenatedCifti] = pfm_regress_adjacent_cortex(ConcatenatedCifti,[PfmDir '/DistanceMatrix.mat'],20);
-%
-%% write out the CIFTI file;
-%ft_write_cifti_mod([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti);
+nSessions = 1;
+
+% preallocate;
+ConcatenatedData = [];
+
+% sweep through the sessions;
+for i = 1:nSessions
+    
+    % count the number of runs in this session
+    nRuns = length(dir([Subdir '/MNINonLinear/Results/rest*']));
+    
+    % sweep through the runs;
+    for ii = 1:nRuns
+        
+        % load the denoised & fs_lr_32k surface-registered CIFTI file for run "ii" from session "i"...
+        Cifti = ft_read_cifti([Subdir '/MNINonLinear/Results/rest-' num2str(ii) '/rest-' num2str(ii) '_Atlas_s0.dtseries.nii']);
+        Cifti.data = Cifti.dtseries - mean(Cifti.dtseries,2); % demean
+        %Tmask = load([Subdir '/processed_restingstate_timecourses/ses-func' sprintf('%02d',i) '/sub-' Subject '_ses-func' sprintf('%02d',i) '_task-rest_run-' sprintf('%02d',ii) '_bold_32k_fsLR_tmask.txt']);
+        %ConcatenatedData = [ConcatenatedData Cifti.data(:,Tmask==1)]; % 1 (Low motion timepoints) == FD < 0.3mm, 0 (High motion timepoints) == FD > 0.3mm
+        ConcatenatedData = [ConcatenatedData Cifti.data];
+
+    end
+    
+end
+
+% make a single CIFTI containing time-series from all scans;
+ConcatenatedCifti = Cifti;
+ConcatenatedCifti.data = ConcatenatedData;
+
+
+%% Step 2: Make a distance matrix.
+
+% define fs_lr_32k midthickness surfaces;
+MidthickSurfs{1} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.L.midthickness.32k_fs_LR.surf.gii'];
+MidthickSurfs{2} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.R.midthickness.32k_fs_LR.surf.gii'];
+
+% make the distance matrix;
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+% optional: regress adjacent cortical signal from subcortex to reduce artifactual coupling
+% (for example, between cerebellum and visual cortex, or between putamen and insular cortex)
+[ConcatenatedCifti] = pfm_regress_adjacent_cortex(ConcatenatedCifti,[PfmDir '/DistanceMatrix.mat'],20);
+
+% write out the CIFTI file;
+ft_write_cifti_mod([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti);
 
 %% Step 3: Smoothing (Done in ciftify)
 
