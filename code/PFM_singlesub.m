@@ -7,7 +7,7 @@ addpath(genpath(['/mmfs1/projects/psych_oajilore_chi/mattonim/lld-sal/code/MSCco
 
 
 % define path to some software packages that will be needed
-InfoMapBinary = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/infomap'; 
+InfoMapBinary = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/Infomap'; 
 WorkbenchBinary = '/home/mattonim/workbench/bin_linux64/wb_command'; 
 
 % number of workers
@@ -77,11 +77,11 @@ ft_write_cifti_mod([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR
 ConcatenatedCifti = ft_read_cifti_mod([PfmDir 'sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii']);
 
 % define inputs;
-DistanceMatrix = [Subdir '/pfm/DistanceMatrix.mat']; % can be path to file
-DistanceCutoff = 10; % in mm; usually between 10 to 30 mm works well.
-GraphDensities = flip([0.0001 0.0002 0.0005 0.001 0.002 0.005 0.01 0.02 0.05]); %
-NumberReps = 50; % number of times infomap is run;
-BadVertices = []; % optional, but you could include regions to ignore, if you know there is bad signal there.
+DistanceMatrix = [Subdir '/pfm/DistanceMatrix.mat'];
+DistanceCutoff = 10;
+GraphDensities = flip([0.0001 0.0002 0.0005 0.001 0.002 0.005 0.01 0.02 0.05]);
+NumberReps = 50;
+BadVertices = [];
 Structures = {'CORTEX_LEFT','CEREBELLUM_LEFT','ACCUMBENS_LEFT','CAUDATE_LEFT','PALLIDUM_LEFT','PUTAMEN_LEFT','THALAMUS_LEFT','HIPPOCAMPUS_LEFT','AMYGDALA_LEFT','ACCUMBENS_LEFT','CORTEX_RIGHT','CEREBELLUM_RIGHT','ACCUMBENS_RIGHT','CAUDATE_RIGHT','PALLIDUM_RIGHT','PUTAMEN_RIGHT','THALAMUS_RIGHT','HIPPOCAMPUS_RIGHT','AMYGDALA_RIGHT','ACCUMBENS_RIGHT'};
 
 % run infomap
