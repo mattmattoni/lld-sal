@@ -41,7 +41,7 @@ for i = 1:nSessions
         
         % load the denoised & fs_lr_32k surface-registered CIFTI file for run "ii" from session "i"...
         Cifti = ft_read_cifti_mod([Subdir '/MNINonLinear/Results/rest-' num2str(ii) '/rest-' num2str(ii) '_Atlas_s0.dtseries.nii']);
-        Cifti.data = Cifti.dtseries - mean(Cifti.dtseries,2); % demean
+        Cifti.data = Cifti.data - mean(Cifti.data,2); % demean
         ConcatenatedData = [ConcatenatedData Cifti.data];
 
     end
