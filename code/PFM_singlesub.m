@@ -24,82 +24,83 @@ PfmDir = [Subdir '/pfm/'];
 mkdir(PfmDir);
 
 % count the number of imaging sessions;
-nSessions = 1;
-
-% preallocate;
-ConcatenatedData = [];
-
-% sweep through the sessions;
-for i = 1:nSessions
-    
-    % count the number of runs in this session
-    nRuns = length(dir([Subdir '/MNINonLinear/Results/rest*']));
-    
-    % sweep through the runs;
-    for ii = 1:nRuns
-        
-        % load the denoised & fs_lr_32k surface-registered CIFTI file for run "ii" from session "i"...
-        Cifti = ft_read_cifti([Subdir '/MNINonLinear/Results/rest-' num2str(ii) '/rest-' num2str(ii) '_Atlas_s0.dtseries.nii']);
-        Cifti.data = Cifti.dtseries - mean(Cifti.dtseries,2); % demean
-        %Tmask = load([Subdir '/processed_restingstate_timecourses/ses-func' sprintf('%02d',i) '/sub-' Subject '_ses-func' sprintf('%02d',i) '_task-rest_run-' sprintf('%02d',ii) '_bold_32k_fsLR_tmask.txt']);
-        %ConcatenatedData = [ConcatenatedData Cifti.data(:,Tmask==1)]; % 1 (Low motion timepoints) == FD < 0.3mm, 0 (High motion timepoints) == FD > 0.3mm
-        ConcatenatedData = [ConcatenatedData Cifti.data];
-
-    end
-    
-end
-
-% make a single CIFTI containing time-series from all scans;
-ConcatenatedCifti = Cifti;
-ConcatenatedCifti.data = ConcatenatedData;
-
-
-%% Step 2: Make a distance matrix.
-
-% define fs_lr_32k midthickness surfaces;
-MidthickSurfs{1} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.L.midthickness.32k_fs_LR.surf.gii'];
-MidthickSurfs{2} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.R.midthickness.32k_fs_LR.surf.gii'];
-
-% make the distance matrix;
-pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
-
-% optional: regress adjacent cortical signal from subcortex to reduce artifactual coupling
-% (for example, between cerebellum and visual cortex, or between putamen and insular cortex)
-[ConcatenatedCifti] = pfm_regress_adjacent_cortex(ConcatenatedCifti,[PfmDir '/DistanceMatrix.mat'],20);
-
-% write out the CIFTI file;
-ft_write_cifti([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti,'parameter','data');
+%nSessions = 1;
+%
+%% preallocate;
+%ConcatenatedData = [];
+%
+%% sweep through the sessions;
+%for i = 1:nSessions
+%    
+%    % count the number of runs in this session
+%    nRuns = length(dir([Subdir '/MNINonLinear/Results/rest*']));
+%    
+%    % sweep through the runs;
+%    for ii = 1:nRuns
+%        
+%        % load the denoised & fs_lr_32k surface-registered CIFTI file for run "ii" from session "i"...
+%        Cifti = ft_read_cifti([Subdir '/MNINonLinear/Results/rest-' num2str(ii) '/rest-' num2str(ii) '_Atlas_s0.dtseries.nii']);
+%        Cifti.data = Cifti.dtseries - mean(Cifti.dtseries,2); % demean
+%        %Tmask = load([Subdir '/processed_restingstate_timecourses/ses-func' sprintf('%02d',i) '/sub-' Subject '_ses-func' sprintf('%02d',i) '_task-rest_run-' sprintf('%02d',ii) '_bold_32k_fsLR_tmask.txt']);
+%        %ConcatenatedData = [ConcatenatedData Cifti.data(:,Tmask==1)]; % 1 (Low motion timepoints) == FD < 0.3mm, 0 (High motion timepoints) == FD > 0.3mm
+%        ConcatenatedData = [ConcatenatedData Cifti.data];
+%
+%    end
+%    
+%end
+%
+%% make a single CIFTI containing time-series from all scans;
+%ConcatenatedCifti = Cifti;
+%ConcatenatedCifti.data = ConcatenatedData;
+%
+%
+%%% Step 2: Make a distance matrix.
+%
+%% define fs_lr_32k midthickness surfaces;
+%MidthickSurfs{1} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.L.midthickness.32k_fs_LR.surf.gii'];
+%MidthickSurfs{2} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.R.midthickness.32k_fs_LR.surf.gii'];
+%
+%% make the distance matrix;
+%pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+%
+%% optional: regress adjacent cortical signal from subcortex to reduce artifactual coupling
+%% (for example, between cerebellum and visual cortex, or between putamen and insular cortex)
+%[ConcatenatedCifti] = pfm_regress_adjacent_cortex(ConcatenatedCifti,[PfmDir '/DistanceMatrix.mat'],20);
+%
+%% write out the CIFTI file;
+%ft_write_cifti([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti,'parameter','data');
 
 %% Step 3: Smoothing (Done in ciftify)
 
-%%% Step 4: Run infomap.
-%
-%% load your concatenated resting-state dataset, pick whatever level of spatial smoothing you want
-%ConcatenatedCifti = ft_read_cifti_mod([PfmDir '/sub-ME01_task-rest_concatenated_smoothed2.55_32k_fsLR.dtseries.nii']);
-%
-%% define inputs;
-%DistanceMatrix = [Subdir '/pfm/DistanceMatrix.mat']; % can be path to file
-%DistanceCutoff = 10; % in mm; usually between 10 to 30 mm works well.
-%GraphDensities = flip([0.0001 0.0002 0.0005 0.001 0.002 0.005 0.01 0.02 0.05]); %
-%NumberReps = 50; % number of times infomap is run;
-%BadVertices = []; % optional, but you could include regions to ignore, if you know there is bad signal there.
-%Structures = {'CORTEX_LEFT','CEREBELLUM_LEFT','ACCUMBENS_LEFT','CAUDATE_LEFT','PALLIDUM_LEFT','PUTAMEN_LEFT','THALAMUS_LEFT','HIPPOCAMPUS_LEFT','AMYGDALA_LEFT','ACCUMBENS_LEFT','CORTEX_RIGHT','CEREBELLUM_RIGHT','ACCUMBENS_RIGHT','CAUDATE_RIGHT','PALLIDUM_RIGHT','PUTAMEN_RIGHT','THALAMUS_RIGHT','HIPPOCAMPUS_RIGHT','AMYGDALA_RIGHT','ACCUMBENS_RIGHT'};
-%
-%% run infomap
-%pfm_infomap(ConcatenatedCifti,DistanceMatrix,PfmDir,GraphDensities,NumberReps,DistanceCutoff,BadVertices,Structures,nWorkers,InfoMapBinary);
-%
-%% remove some intermediate files (optional)
-%system(['rm ' Subdir '/pfm/*.net']);
-%system(['rm ' Subdir '/pfm/*.clu']);
-%system(['rm ' Subdir '/pfm/*Log*']);
-%
-%% define inputs;
-%Input = [PfmDir '/Bipartite_PhysicalCommunities.dtseries.nii'];
-%Output = 'Bipartite_PhysicalCommunities+SpatialFiltering.dtseries.nii';
-%MinSize = 50; % in mm^2
-%
-%% perform spatial filtering
-%pfm_spatial_filtering(Input,PfmDir,Output,MidthickSurfs,MinSize,WorkbenchBinary);
+%% Step 4: Run infomap.
+
+% load your concatenated resting-state dataset, pick whatever level of spatial smoothing you want
+ConcatenatedCifti = ft_read_cifti([PfmDir 'sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii']);
+
+% define inputs;
+DistanceMatrix = [Subdir '/pfm/DistanceMatrix.mat']; % can be path to file
+DistanceCutoff = 10; % in mm; usually between 10 to 30 mm works well.
+GraphDensities = flip([0.0001 0.0002 0.0005 0.001 0.002 0.005 0.01 0.02 0.05]); %
+NumberReps = 50; % number of times infomap is run;
+BadVertices = []; % optional, but you could include regions to ignore, if you know there is bad signal there.
+Structures = {'CORTEX_LEFT','CEREBELLUM_LEFT','ACCUMBENS_LEFT','CAUDATE_LEFT','PALLIDUM_LEFT','PUTAMEN_LEFT','THALAMUS_LEFT','HIPPOCAMPUS_LEFT','AMYGDALA_LEFT','ACCUMBENS_LEFT','CORTEX_RIGHT','CEREBELLUM_RIGHT','ACCUMBENS_RIGHT','CAUDATE_RIGHT','PALLIDUM_RIGHT','PUTAMEN_RIGHT','THALAMUS_RIGHT','HIPPOCAMPUS_RIGHT','AMYGDALA_RIGHT','ACCUMBENS_RIGHT'};
+
+% run infomap
+pfm_infomap(ConcatenatedCifti,DistanceMatrix,PfmDir,GraphDensities,NumberReps,DistanceCutoff,BadVertices,Structures,nWorkers,InfoMapBinary);
+
+% remove some intermediate files (optional)
+system(['rm ' Subdir '/pfm/*.net']);
+system(['rm ' Subdir '/pfm/*.clu']);
+system(['rm ' Subdir '/pfm/*Log*']);
+
+% define inputs;
+Input = [PfmDir '/Bipartite_PhysicalCommunities.dtseries.nii'];
+Output = 'Bipartite_PhysicalCommunities+SpatialFiltering.dtseries.nii';
+MinSize = 50; % in mm^2
+
+% perform spatial filtering
+pfm_spatial_filtering(Input,PfmDir,Output,MidthickSurfs,MinSize,WorkbenchBinary);
+
 %%% Step 5: Algorithmic assignment of network identities to infomap communities.
 %
 %% load the priors;

@@ -199,7 +199,7 @@ for d = 1:length(GraphDensities)
 end
 
 % write out the physical bipartite communities;
-ft_write_cifti_mod([OutDir '/Bipartite_PhysicalCommunities.dtseries.nii'],InfoMap_Ci);
+ft_write_cifti([OutDir '/Bipartite_PhysicalCommunities.dtseries.nii'],InfoMap_Ci,'parameter','data');
 
 end
 
