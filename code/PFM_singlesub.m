@@ -3,6 +3,7 @@
 % add dependencies to Matlab search path
 addpath(genpath(['/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/PFM-Tutorial/Utilities']));
 addpath(genpath('/mmfs1/projects/psych_oajilore_chi/mattonim/lld-sal/code/cifti-matlab-master'));
+addpath(genpath('/mmfs1/projects/psych_oajilore_chi/mattonim/lld-sal/code/MSCcodebase-master'));
 
 
 % define path to some software packages that will be needed
@@ -68,14 +69,14 @@ mkdir(PfmDir);
 %[ConcatenatedCifti] = pfm_regress_adjacent_cortex(ConcatenatedCifti,[PfmDir '/DistanceMatrix.mat'],20);
 %
 %% write out the CIFTI file;
-%ft_write_cifti([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti,'parameter','data');
+%ft_write_cifti_mod([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti);
 
 %% Step 3: Smoothing (Done in ciftify)
 
 %% Step 4: Run infomap.
 
 % load your concatenated resting-state dataset, pick whatever level of spatial smoothing you want
-ConcatenatedCifti = ft_read_cifti([PfmDir 'sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii']);
+ConcatenatedCifti = ft_read_cifti_mod([PfmDir 'sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii']);
 
 % define inputs;
 DistanceMatrix = [Subdir '/pfm/DistanceMatrix.mat']; % can be path to file
