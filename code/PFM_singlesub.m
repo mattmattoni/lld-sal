@@ -2,8 +2,8 @@
 
 % add dependencies to Matlab search path
 addpath(genpath(['/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/code/PFM-Tutorial/Utilities']));
-addpath(genpath('/mmfs1/projects/psych_oajilore_chi/mattonim/lld-sal/code/cifti-matlab-master'));
-addpath(genpath('/mmfs1/projects/psych_oajilore_chi/mattonim/lld-sal/code/MSCcodebase-master'));
+addpath(genpath(['/mmfs1/projects/psych_oajilore_chi/mattonim/lld-sal/code/cifti-matlab-master']));
+addpath(genpath(['/mmfs1/projects/psych_oajilore_chi/mattonim/lld-sal/code/MSCcodebase-master']));
 
 
 % define path to some software packages that will be needed
@@ -40,10 +40,8 @@ for i = 1:nSessions
     for ii = 1:nRuns
         
         % load the denoised & fs_lr_32k surface-registered CIFTI file for run "ii" from session "i"...
-        Cifti = ft_read_cifti([Subdir '/MNINonLinear/Results/rest-' num2str(ii) '/rest-' num2str(ii) '_Atlas_s0.dtseries.nii']);
+        Cifti = ft_read_cifti_mod([Subdir '/MNINonLinear/Results/rest-' num2str(ii) '/rest-' num2str(ii) '_Atlas_s0.dtseries.nii']);
         Cifti.data = Cifti.dtseries - mean(Cifti.dtseries,2); % demean
-        %Tmask = load([Subdir '/processed_restingstate_timecourses/ses-func' sprintf('%02d',i) '/sub-' Subject '_ses-func' sprintf('%02d',i) '_task-rest_run-' sprintf('%02d',ii) '_bold_32k_fsLR_tmask.txt']);
-        %ConcatenatedData = [ConcatenatedData Cifti.data(:,Tmask==1)]; % 1 (Low motion timepoints) == FD < 0.3mm, 0 (High motion timepoints) == FD > 0.3mm
         ConcatenatedData = [ConcatenatedData Cifti.data];
 
     end
