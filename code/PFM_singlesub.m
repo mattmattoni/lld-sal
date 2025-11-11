@@ -102,20 +102,6 @@ ConcatenatedCifti = ft_read_cifti_mod([PfmDir 'sub-' Subject '_task-rest_concate
 
 %% Step 5: Algorithmic assignment of network identities to infomap communities.
 
-% Estimate surface areas; 
-SurfDir = [Subdir 'MNINonLinear/fsaverage_LR32k'];
-
-% Compute vertex areas for each hemisphere
-system(['wb_command -surface-vertex-areas ' SurfDir '/' Subject '.L.midthickness.32k_fs_LR.surf.gii ' SurfDir '/' Subject '.L.midthickness_va.32k_fs_LR.shape.gii']);
-system(['wb_command -surface-vertex-areas ' SurfDir '/' Subject '.R.midthickness.32k_fs_LR.surf.gii ' SurfDir '/' Subject '.R.midthickness_va.32k_fs_LR.shape.gii']);
-
-% Merge hemispheres into one dscalar
-system(['wb_command -cifti-create-dense-scalar ' SurfDir '/' Subject '.midthickness_va.32k_fs_LR.dscalar.nii ' ...
-        '-left-metric ' SurfDir '/' Subject '.L.midthickness_va.32k_fs_LR.shape.gii ' ...
-        '-right-metric ' SurfDir '/' Subject '.R.midthickness_va.32k_fs_LR.shape.gii']);
-
-
-
 % load the priors;
 load('priors.mat');
 
@@ -138,63 +124,19 @@ Output = 'Bipartite_PhysicalCommunities+FinalLabeling';
 
 %% Step 7: Calculate size of each functional brain network
 
-fprintf('\n==========================================\n');
-fprintf('STEP 7: Network Size Calculation\n');
-fprintf('==========================================\n');
-
 % define inputs
 FunctionalNetworks = ft_read_cifti_mod([PfmDir '/Bipartite_PhysicalCommunities+AlgorithmicLabeling.dlabel.nii']);
-VA = ft_read_cifti_mod([Subdir '/fs_LR/fsaverage_LR32k/' Subject '.midthickness_va.32k_fs_LR.dscalar.nii']);
+VA = ft_read_cifti_mod([Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.midthickness_va.32k_fs_LR.dscalar.nii']);
 Structures = {'CORTEX_LEFT','CORTEX_RIGHT'}; % in this case, cortex only.
 
 % calculate the size of each functional brain network
 NetworkSize = pfm_calculate_network_size(FunctionalNetworks,VA,Structures);
 
-% Get unique networks
+% Save network sizes to text file
 uCi = unique(nonzeros(FunctionalNetworks.data));
-
-% Print network sizes to console/log
-fprintf('\n=== FUNCTIONAL NETWORK SIZES ===\n');
-for i = 1:length(uCi)
-    fprintf('%s: %.2f%%\n', Priors.NetworkLabels{uCi(i)}, NetworkSize(i));
-end
-fprintf('=================================\n\n');
-
-% Try to save text file with full debugging
-fprintf('DEBUG: Attempting to save text file...\n');
-fprintf('DEBUG: PfmDir = "%s"\n', PfmDir);
-fprintf('DEBUG: Full path = "%s"\n', [PfmDir '/FunctionalNetworkSizes.txt']);
-fprintf('DEBUG: Current directory = "%s"\n', pwd);
-
-% Check if directory is writable
-[status, msg] = fileattrib(PfmDir);
-if status
-    fprintf('DEBUG: Directory exists and is %s\n', msg.UserWrite);
-else
-    fprintf('DEBUG: Cannot access directory: %s\n', msg);
-end
-
-% Try to open file
 fid = fopen([PfmDir '/FunctionalNetworkSizes.txt'],'w');
-fprintf('DEBUG: fopen returned fid = %d\n', fid);
-
-if fid == -1
-    fprintf('ERROR: fopen FAILED to create file!\n');
-    [err_msg, err_num] = ferror(fid);
-    fprintf('ERROR: ferror returned: %s (error %d)\n', err_msg, err_num);
-else
-    fprintf('DEBUG: File opened successfully, writing...\n');
-    fprintf(fid,'Network\tPercentage\n');
-    for i = 1:length(uCi)
-        fprintf(fid,'%s\t%.2f\n', Priors.NetworkLabels{uCi(i)}, NetworkSize(i));
-    end
-    fclose(fid);
-    fprintf('DEBUG: Text file written and closed successfully\n');
-    
-    % Verify file was created
-    if exist([PfmDir '/FunctionalNetworkSizes.txt'], 'file')
-        fprintf('DEBUG: File verified to exist after writing\n');
-    else
-        fprintf('ERROR: File does not exist after writing!\n');
-    end
+fprintf(fid,'Network\tPercentage\n');
+for i = 1:length(uCi)
+    fprintf(fid,'%s\t%.2f\n', Priors.NetworkLabels{uCi(i)}, NetworkSize(i));
 end
+fclose(fid);

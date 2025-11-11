@@ -6,8 +6,8 @@
 #SBATCH --ntasks=15
 #SBATCH --mem=5G
 #SBATCH --time=4:00:00
-#SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/ciftify_func_%j.log
-#SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/ciftify_func_%j.e
+#SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/surface_areas_%j.log
+#SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/surface_areas_%j.e
 
 export PATH=$HOME/.local/bin:$PATH
 
