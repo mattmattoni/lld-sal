@@ -102,6 +102,20 @@ ConcatenatedCifti = ft_read_cifti_mod([PfmDir 'sub-' Subject '_task-rest_concate
 
 %% Step 5: Algorithmic assignment of network identities to infomap communities.
 
+% Estimate surface areas; 
+SurfDir = [Subdir 'MNINonLinear/fsaverage_LR32k'];
+
+% Compute vertex areas for each hemisphere
+system(['wb_command -surface-vertex-areas ' SurfDir '/' Subject '.L.midthickness.32k_fs_LR.surf.gii ' SurfDir '/' Subject '.L.midthickness_va.32k_fs_LR.shape.gii']);
+system(['wb_command -surface-vertex-areas ' SurfDir '/' Subject '.R.midthickness.32k_fs_LR.surf.gii ' SurfDir '/' Subject '.R.midthickness_va.32k_fs_LR.shape.gii']);
+
+% Merge hemispheres into one dscalar
+system(['wb_command -cifti-create-dense-scalar ' SurfDir '/' Subject '.midthickness_va.32k_fs_LR.dscalar.nii ' ...
+        '-left-metric ' SurfDir '/' Subject '.L.midthickness_va.32k_fs_LR.shape.gii ' ...
+        '-right-metric ' SurfDir '/' Subject '.R.midthickness_va.32k_fs_LR.shape.gii']);
+
+
+
 % load the priors;
 load('priors.mat');
 
