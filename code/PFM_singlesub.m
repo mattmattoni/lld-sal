@@ -136,7 +136,7 @@ NetworkSize = pfm_calculate_network_size(FunctionalNetworks,VA,Structures);
 % Save network sizes to text file
 close all; % blank slate
 uCi = unique(nonzeros(FunctionalNetworks.data));
-fid = fopen([PfmDir 'FunctionalNetworkSizes.txt'],'w');
+fid = fopen([PfmDir '/FunctionalNetworkSizes.txt'],'w');
 fprintf(fid,'Network\tPercentage\n');
 for i = 1:length(uCi)
     fprintf(fid,'%s\t%.2f\n', Priors.NetworkLabels{uCi(i)}, NetworkSize(i));
