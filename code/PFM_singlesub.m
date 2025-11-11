@@ -56,8 +56,8 @@ PfmDir = [Subdir '/pfm/'];
 %%% Step 2: Make a distance matrix.
 %
 %% define fs_lr_32k midthickness surfaces;
-%MidthickSurfs{1} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.L.midthickness.32k_fs_LR.surf.gii'];
-%MidthickSurfs{2} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.R.midthickness.32k_fs_LR.surf.gii'];
+MidthickSurfs{1} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.L.midthickness.32k_fs_LR.surf.gii'];
+MidthickSurfs{2} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.R.midthickness.32k_fs_LR.surf.gii'];
 %
 %% make the distance matrix;
 %pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
@@ -74,7 +74,7 @@ PfmDir = [Subdir '/pfm/'];
 %%% Step 4: Run infomap.
 %
 %% load your concatenated resting-state dataset, pick whatever level of spatial smoothing you want
-%ConcatenatedCifti = ft_read_cifti_mod([PfmDir 'sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii']);
+ConcatenatedCifti = ft_read_cifti_mod([PfmDir 'sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii']);
 %
 %% define inputs;
 %DistanceMatrix = [Subdir '/pfm/DistanceMatrix.mat'];
