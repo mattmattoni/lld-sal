@@ -124,8 +124,11 @@ Output = 'Bipartite_PhysicalCommunities+FinalLabeling';
 
 %% Step 7: Calculate size of each functional brain network
 
+fprintf('\n==========================================\n');
+fprintf('STEP 7: Network Size Calculation\n');
+fprintf('==========================================\n');
+
 % define inputs
-%FunctionalNetworks = ft_read_cifti_mod([PfmDir '/Bipartite_PhysicalCommunities+FinalLabeling.dlabel.nii']);
 FunctionalNetworks = ft_read_cifti_mod([PfmDir '/Bipartite_PhysicalCommunities+AlgorithmicLabeling.dlabel.nii']);
 VA = ft_read_cifti_mod([Subdir '/fs_LR/fsaverage_LR32k/' Subject '.midthickness_va.32k_fs_LR.dscalar.nii']);
 Structures = {'CORTEX_LEFT','CORTEX_RIGHT'}; % in this case, cortex only.
@@ -133,37 +136,51 @@ Structures = {'CORTEX_LEFT','CORTEX_RIGHT'}; % in this case, cortex only.
 % calculate the size of each functional brain network
 NetworkSize = pfm_calculate_network_size(FunctionalNetworks,VA,Structures);
 
-% Save network sizes to text file
-close all; % blank slate
+% Get unique networks
 uCi = unique(nonzeros(FunctionalNetworks.data));
+
+% Print network sizes to console/log
+fprintf('\n=== FUNCTIONAL NETWORK SIZES ===\n');
+for i = 1:length(uCi)
+    fprintf('%s: %.2f%%\n', Priors.NetworkLabels{uCi(i)}, NetworkSize(i));
+end
+fprintf('=================================\n\n');
+
+% Try to save text file with full debugging
+fprintf('DEBUG: Attempting to save text file...\n');
+fprintf('DEBUG: PfmDir = "%s"\n', PfmDir);
+fprintf('DEBUG: Full path = "%s"\n', [PfmDir '/FunctionalNetworkSizes.txt']);
+fprintf('DEBUG: Current directory = "%s"\n', pwd);
+
+% Check if directory is writable
+[status, msg] = fileattrib(PfmDir);
+if status
+    fprintf('DEBUG: Directory exists and is %s\n', msg.UserWrite);
+else
+    fprintf('DEBUG: Cannot access directory: %s\n', msg);
+end
+
+% Try to open file
 fid = fopen([PfmDir '/FunctionalNetworkSizes.txt'],'w');
-fprintf(fid,'Network\tPercentage\n');
-for i = 1:length(uCi)
-    fprintf(fid,'%s\t%.2f\n', Priors.NetworkLabels{uCi(i)}, NetworkSize(i));
+fprintf('DEBUG: fopen returned fid = %d\n', fid);
+
+if fid == -1
+    fprintf('ERROR: fopen FAILED to create file!\n');
+    [err_msg, err_num] = ferror(fid);
+    fprintf('ERROR: ferror returned: %s (error %d)\n', err_msg, err_num);
+else
+    fprintf('DEBUG: File opened successfully, writing...\n');
+    fprintf(fid,'Network\tPercentage\n');
+    for i = 1:length(uCi)
+        fprintf(fid,'%s\t%.2f\n', Priors.NetworkLabels{uCi(i)}, NetworkSize(i));
+    end
+    fclose(fid);
+    fprintf('DEBUG: Text file written and closed successfully\n');
+    
+    % Verify file was created
+    if exist([PfmDir '/FunctionalNetworkSizes.txt'], 'file')
+        fprintf('DEBUG: File verified to exist after writing\n');
+    else
+        fprintf('ERROR: File does not exist after writing!\n');
+    end
 end
-fclose(fid);
-
-
-close all; % blank slate
-H = figure; % prellocate parent figure
-set(H,'position',[1 1 325 400]); hold;
-
-% unique functional networks;
-uCi = unique(nonzeros(FunctionalNetworks.data));
-
-% sweep through
-% the networks;
-for i = 1:length(uCi)
-    Tmp = nan(1,length(Priors.NetworkLabels));
-    Tmp(i) = NetworkSize(i);
-    barh(Tmp,'FaceColor',Priors.NetworkColors(i,:));
-    text((NetworkSize(i)+0.1),i,[num2str(NetworkSize(i),3) '%']);
-end
-
-% make it pretty;
-yticklabels(Priors.NetworkLabels);
-yticks(1:length(uCi)); ylim([0 21]);
-xlim([0 20]); xticks(0:5:20);
-set(gca,'fontname','arial','fontsize',10,'TickLength',[0 0],'TickLabelInterpreter','none');
-xlabel('% of Cortical Surface');
-print(gcf,[PfmDir '/FunctionalNetworkSizes'],'-dpdf');
