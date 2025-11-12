@@ -9,9 +9,6 @@
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.log
 #SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.e
 
-set -e  # Exit on error
-set -x  # Print commands as they execute
-
 export PATH=$HOME/.local/bin:$PATH
 module load parallel/20230722-GCCcore-12.2.0
 
@@ -41,16 +38,12 @@ export -f process_subject
 
 cd /projects/psych_oajilore_chi/mattonim/rembrandt/$FS_SITE
 
-# Count number of subject directories
 NUM_SUBJECTS=$(ls -d [0-9]* 2>/dev/null | wc -l)
-
-# Jobs: NUM_SUBJECTS or 5
-PARALLEL_JOBS=$((NUM_SUBJECTS < 5 ? NUM_SUBJECTS : 5))
+PARALLEL_JOBS=5
 
 echo "Found $NUM_SUBJECTS subjects"
 echo "Running $PARALLEL_JOBS subjects in parallel"
 
-# Run subjects in parallel
 ls -d [0-9]* | parallel --jobs $PARALLEL_JOBS --joblog /projects/psych_oajilore_chi/mattonim/lld-sal/logs/parallel_joblog_${SLURM_JOB_ID}.txt process_subject {}
 
 echo "All $NUM_SUBJECTS subjects completed!"
