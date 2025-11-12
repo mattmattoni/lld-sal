@@ -3,7 +3,7 @@
 #SBATCH --partition=batch
 #SBATCH --job-name=ciftify_recon
 #SBATCH --nodes=1
-#SBATCH --ntasks=15
+#SBATCH --ntasks=5
 #SBATCH --mem=128G
 #SBATCH --time=04:00:00
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.log
@@ -42,8 +42,8 @@ cd /projects/psych_oajilore_chi/mattonim/rembrandt/$FS_SITE
 # Count number of subject directories
 NUM_SUBJECTS=$(ls -d [0-9]* 2>/dev/null | wc -l)
 
-# Jobs: NUM_SUBJECTS or 15
-PARALLEL_JOBS=$((NUM_SUBJECTS < 15 ? NUM_SUBJECTS : 15))
+# Jobs: NUM_SUBJECTS or 5
+PARALLEL_JOBS=$((NUM_SUBJECTS < 5 ? NUM_SUBJECTS : 5))
 
 echo "Found $NUM_SUBJECTS subjects"
 echo "Running $PARALLEL_JOBS subjects in parallel"
