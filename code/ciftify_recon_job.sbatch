@@ -23,7 +23,7 @@ export CIFTIFY_IMG PROJECT_DIR FS_SITE
 
 process_subject() {
     SUBJECT_ID=$1
-    echo "[$(date)] Starting subject: $SUBJECT_ID"
+    echo "[$(date)] Starting subject: $SUBJECT_ID" >&2
     
     singularity exec --bind "$PROJECT_DIR":/data --bind /projects/psych_oajilore_chi/mattonim/lld-sal:/githome "$CIFTIFY_IMG" \
       /home/code/ciftify/ciftify/bin/ciftify_recon_all $SUBJECT_ID \
@@ -32,7 +32,7 @@ process_subject() {
         --surf-reg MSMSulc \
         --fs-license /githome/license.txt
     
-    echo "[$(date)] Completed subject: $SUBJECT_ID"
+    echo "[$(date)] Completed subject: $SUBJECT_ID" >&2
 }
 
 export -f process_subject
