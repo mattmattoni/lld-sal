@@ -9,6 +9,8 @@
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.log
 #SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.e
 
+set -e  # Exit on error
+set -x  # Print commands as they execute
 
 export PATH=$HOME/.local/bin:$PATH
 module load parallel/20230722-GCCcore-12.2.0
