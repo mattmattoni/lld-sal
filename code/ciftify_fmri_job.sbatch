@@ -4,8 +4,8 @@
 #SBATCH --job-name=ciftify_func
 #SBATCH --nodes=1
 #SBATCH --ntasks=15
-#SBATCH --mem=5G
-#SBATCH --time=4:00:00
+#SBATCH --mem=128G
+#SBATCH --time=8:00:00
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/ciftify_func_%j.log
 #SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/ciftify_func_%j.e
 
@@ -16,7 +16,7 @@ CIFTIFY_IMG=/projects/psych_oajilore_chi/mattonim/tigrlab_fmriprep_ciftify_lates
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
 FS_SITE=REMBRANDT-FS7_v1-Baseline-VUMC 
 FMRI_SITE=Baseline-fMRI_REST2-VUMC 
-FUNC_LABEL=rest-2
+FUNC_LABEL=rest-1
 
 export CIFTIFY_IMG PROJECT_DIR FS_SITE FMRI_SITE
 

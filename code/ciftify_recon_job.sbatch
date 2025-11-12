@@ -3,9 +3,9 @@
 #SBATCH --partition=batch
 #SBATCH --job-name=ciftify_recon
 #SBATCH --nodes=1
-#SBATCH --ntasks=5
+#SBATCH --ntasks=12
 #SBATCH --mem=128G
-#SBATCH --time=04:00:00
+#SBATCH --time=24:00:00
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.log
 #SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.e
 
@@ -40,6 +40,6 @@ cd /projects/psych_oajilore_chi/mattonim/rembrandt/$FS_SITE
 
 echo "Found $(ls -d [0-9]* 2>/dev/null | wc -l) subjects"
 
-ls -d [0-9]* | parallel --jobs 5 --line-buffer --joblog /projects/psych_oajilore_chi/mattonim/lld-sal/logs/parallel_joblog_${SLURM_JOB_ID}.txt 'process_subject {}'
+ls -d [0-9]* | parallel --jobs 12 --line-buffer --joblog /projects/psych_oajilore_chi/mattonim/lld-sal/logs/parallel_joblog_${SLURM_JOB_ID}.txt 'process_subject {}'
 
 echo "All subjects completed!"
