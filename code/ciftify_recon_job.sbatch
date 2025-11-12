@@ -22,7 +22,7 @@ export CIFTIFY_IMG PROJECT_DIR FS_SITE
 
 process_subject() {
     SUBJECT_ID=$1
-    echo "[$(date)] Starting subject: $SUBJECT_ID" >&2
+    echo "[$(date)] Starting subject: $SUBJECT_ID"
     
     singularity exec --bind "$PROJECT_DIR":/data --bind /projects/psych_oajilore_chi/mattonim/lld-sal:/githome "$CIFTIFY_IMG" \
       /home/code/ciftify/ciftify/bin/ciftify_recon_all $SUBJECT_ID \
@@ -31,19 +31,15 @@ process_subject() {
         --surf-reg MSMSulc \
         --fs-license /githome/license.txt
     
-    echo "[$(date)] Completed subject: $SUBJECT_ID" >&2
+    echo "[$(date)] Completed subject: $SUBJECT_ID"
 }
 
 export -f process_subject
 
 cd /projects/psych_oajilore_chi/mattonim/rembrandt/$FS_SITE
 
-NUM_SUBJECTS=$(ls -d [0-9]* 2>/dev/null | wc -l)
-PARALLEL_JOBS=5
+echo "Found $(ls -d [0-9]* 2>/dev/null | wc -l) subjects"
 
-echo "Found $NUM_SUBJECTS subjects"
-echo "Running $PARALLEL_JOBS subjects in parallel"
+ls -d [0-9]* | parallel --jobs 5 --line-buffer --joblog /projects/psych_oajilore_chi/mattonim/lld-sal/logs/parallel_joblog_${SLURM_JOB_ID}.txt 'process_subject {}'
 
-ls -d [0-9]* | parallel --jobs $PARALLEL_JOBS --joblog /projects/psych_oajilore_chi/mattonim/lld-sal/logs/parallel_joblog_${SLURM_JOB_ID}.txt process_subject {}
-
-echo "All $NUM_SUBJECTS subjects completed!"
+echo "All subjects completed!"
