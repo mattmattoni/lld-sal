@@ -4,7 +4,7 @@
 #SBATCH --job-name=ciftify_recon
 #SBATCH --nodes=1
 #SBATCH --ntasks=15
-#SBATCH --mem=5G
+#SBATCH --mem=128G
 #SBATCH --time=04:00:00
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.log
 #SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/recon_%j.e
