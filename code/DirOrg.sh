@@ -1,29 +1,38 @@
+#!/bin/bash
 
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
+SITES=(UIC VUMC UPMC)
 
-#FS_DIR = 
+for SITE in "${SITES[@]}"; do
 
-FMRI_DIR=$PROJECT_DIR/Baseline-fMRI_REST2-VUMC 
+  FS_DIR=$PROJECT_DIR/Baseline-FS-$SITE
+  REST1_DIR=$PROJECT_DIR/Baseline-fMRI_REST1-$SITE
+  REST2_DIR=$PROJECT_DIR/Baseline-fMRI_REST2-$SITE
 
+  # Remove SUBJ subdir in FS
+  cd "$FS_DIR"
+  for dir in REMBRANDT-x-*; do
+    rmdir "$dir/$dir" 2>/dev/null
+  done
 
-#Remove SUBJ subdir in FS
-#cd $FS_DIR
-#for dir in REMBRANDT-x-*; do
-#    #mv "$dir/$dir/"* "$dir/"
-#    rmdir "$dir/$dir"
-#done
+  # Clean Sub IDs in FS
+  for dir in REMBRANDT-x-*; do
+    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    mv "$dir" "$cleandir"
+  done
 
-#Clean Sub IDs in FS
-#for dir in REMBRANDT-x-*; do
-#  cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
-#  mv "$dir" "$cleandir"
-#done
+  # Clean Sub IDs in REST1
+  cd "$REST1_DIR"
+  for dir in REMBRANDT-x-*; do
+    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    mv "$dir" "$cleandir"
+  done
 
-#Clean Sub IDs in functional data
-cd $FMRI_DIR
-for dir in REMBRANDT-x-*; do
-  cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
-  mv "$dir" "$cleandir"
+  # Clean Sub IDs in REST2
+  cd "$REST2_DIR"
+  for dir in REMBRANDT-x-*; do
+    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    mv "$dir" "$cleandir"
+  done
+
 done
-
-#Add task name

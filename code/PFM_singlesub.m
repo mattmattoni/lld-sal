@@ -132,11 +132,21 @@ Structures = {'CORTEX_LEFT','CORTEX_RIGHT'}; % in this case, cortex only.
 % calculate the size of each functional brain network
 NetworkSize = pfm_calculate_network_size(FunctionalNetworks,VA,Structures);
 
-% Save network sizes to text file
+% Save network sizes to text file in alphabetical order
 uCi = unique(nonzeros(FunctionalNetworks.data));
+
+% Create array of network names and sizes, then sort
+NetworkData = cell(length(uCi), 2);
+for i = 1:length(uCi)
+    NetworkData{i,1} = Priors.NetworkLabels{uCi(i)};
+    NetworkData{i,2} = NetworkSize(i);
+end
+NetworkData = sortrows(NetworkData, 1); % Sort by first column (network names)
+
+% Write to file
 fid = fopen([PfmDir '/FunctionalNetworkSizes.txt'],'w');
 fprintf(fid,'Network\tPercentage\n');
-for i = 1:length(uCi)
-    fprintf(fid,'%s\t%.2f\n', Priors.NetworkLabels{uCi(i)}, NetworkSize(i));
+for i = 1:size(NetworkData, 1)
+    fprintf(fid,'%s\t%.2f\n', NetworkData{i,1}, NetworkData{i,2});
 end
 fclose(fid);
