@@ -15,23 +15,37 @@ for SITE in "${SITES[@]}"; do
     rmdir "$dir/$dir" 2>/dev/null
   done
 
-  # Clean Sub IDs in FS
+ # Clean Sub IDs in FS
   for dir in REMBRANDT-x-*; do
-    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    if [ "$SITE" = "UIC" ]; then
+      # Extract just the numeric part from 3REM001 -> 001
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-[^0-9]*([0-9]+)-.*/\1/')
+    else
+      # For VUMC and UPMC, extract the full numeric ID
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    fi
     mv "$dir" "$cleandir"
   done
 
   # Clean Sub IDs in REST1
   cd "$REST1_DIR"
   for dir in REMBRANDT-x-*; do
-    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    if [ "$SITE" = "UIC" ]; then
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-[^0-9]*([0-9]+)-.*/\1/')
+    else
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    fi
     mv "$dir" "$cleandir"
   done
 
   # Clean Sub IDs in REST2
   cd "$REST2_DIR"
   for dir in REMBRANDT-x-*; do
-    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    if [ "$SITE" = "UIC" ]; then
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-[^0-9]*([0-9]+)-.*/\1/')
+    else
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    fi
     mv "$dir" "$cleandir"
   done
 
