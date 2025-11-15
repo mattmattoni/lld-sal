@@ -12,7 +12,10 @@ for SITE in "${SITES[@]}"; do
   # Remove SUBJ subdir in FS
   cd "$FS_DIR"
   for dir in REMBRANDT-x-*; do
-    rmdir "$dir/SUBJ" 2>/dev/null
+    if [ -d "$dir/SUBJ" ]; then
+      mv "$dir/SUBJ"/* "$dir/"
+      rmdir "$dir/SUBJ"
+    fi
   done
 
   # Clean Sub IDs in FS
