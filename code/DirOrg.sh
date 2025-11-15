@@ -12,16 +12,14 @@ for SITE in "${SITES[@]}"; do
   # Remove SUBJ subdir in FS
   cd "$FS_DIR"
   for dir in REMBRANDT-x-*; do
-    rmdir "$dir/$dir" 2>/dev/null
+    rmdir "$dir/SUBJ" 2>/dev/null
   done
 
- # Clean Sub IDs in FS
+  # Clean Sub IDs in FS
   for dir in REMBRANDT-x-*; do
     if [ "$SITE" = "UIC" ]; then
-      # Extract just the numeric part from 3REM001 -> 001
-      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-[^0-9]*([0-9]+)-.*/\1/')
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM0*([0-9]+)-.*/\1/')
     else
-      # For VUMC and UPMC, extract the full numeric ID
       cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
     fi
     mv "$dir" "$cleandir"
@@ -31,7 +29,7 @@ for SITE in "${SITES[@]}"; do
   cd "$REST1_DIR"
   for dir in REMBRANDT-x-*; do
     if [ "$SITE" = "UIC" ]; then
-      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-[^0-9]*([0-9]+)-.*/\1/')
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM0*([0-9]+)-.*/\1/')
     else
       cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
     fi
@@ -42,7 +40,7 @@ for SITE in "${SITES[@]}"; do
   cd "$REST2_DIR"
   for dir in REMBRANDT-x-*; do
     if [ "$SITE" = "UIC" ]; then
-      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-[^0-9]*([0-9]+)-.*/\1/')
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM0*([0-9]+)-.*/\1/')
     else
       cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
     fi
