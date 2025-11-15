@@ -14,32 +14,37 @@ module load parallel/20230722-GCCcore-12.2.0
 
 CIFTIFY_IMG=/projects/psych_oajilore_chi/mattonim/tigrlab_fmriprep_ciftify_latest-2019-08-16-454dd291e09f.simg
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
-FS_SITE=REMBRANDT-FS7_v1-Baseline-VUMC 
+SITES=(UIC VUMC UPMC)
 
 mkdir -p /projects/psych_oajilore_chi/mattonim/rembrandt/data_hcp
 
-export CIFTIFY_IMG PROJECT_DIR FS_SITE
+for SITE in "${SITES[@]}"; do
 
-process_subject() {
-    SUBJECT_ID=$1
-    echo "[$(date)] Starting subject: $SUBJECT_ID"
-    
-    singularity exec --bind "$PROJECT_DIR":/data --bind /projects/psych_oajilore_chi/mattonim/lld-sal:/githome "$CIFTIFY_IMG" \
-      /home/code/ciftify/ciftify/bin/ciftify_recon_all $SUBJECT_ID \
-        --fs-subjects-dir /data/"$FS_SITE" \
-        --ciftify-work-dir /data/data_hcp \
-        --surf-reg MSMSulc \
-        --fs-license /githome/license.txt
-    
-    echo "[$(date)] Completed subject: $SUBJECT_ID"
-}
+  FS_SITE=Baseline-FS-$SITE
+  export CIFTIFY_IMG PROJECT_DIR FS_SITE
 
-export -f process_subject
+  process_subject() {
+      SUBJECT_ID=$1
+      echo "[$(date)] Starting subject: $SUBJECT_ID"
+      
+      singularity exec --bind "$PROJECT_DIR":/data --bind /projects/psych_oajilore_chi/mattonim/lld-sal:/githome "$CIFTIFY_IMG" \
+        /home/code/ciftify/ciftify/bin/ciftify_recon_all $SUBJECT_ID \
+          --fs-subjects-dir /data/"$FS_SITE" \
+          --ciftify-work-dir /data/data_hcp \
+          --surf-reg MSMSulc \
+          --fs-license /githome/license.txt
+      
+      echo "[$(date)] Completed subject: $SUBJECT_ID"
+  }
 
-cd /projects/psych_oajilore_chi/mattonim/rembrandt/$FS_SITE
+  export -f process_subject
 
-echo "Found $(ls -d [0-9]* 2>/dev/null | wc -l) subjects"
+  cd /projects/psych_oajilore_chi/mattonim/rembrandt/$FS_SITE
 
-ls -d [0-9]* | parallel --jobs 12 --line-buffer --joblog /projects/psych_oajilore_chi/mattonim/lld-sal/logs/parallel_joblog_${SLURM_JOB_ID}.txt 'process_subject {}'
+  echo "Found $(ls -d [0-9]* 2>/dev/null | wc -l) subjects"
 
-echo "All subjects completed!"
+  ls -d [0-9]* | parallel --jobs 12 --line-buffer --joblog /projects/psych_oajilore_chi/mattonim/lld-sal/logs/parallel_joblog_${SITE}_${SLURM_JOB_ID}.txt 'process_subject {}'
+
+  echo "All subjects completed!"
+
+done

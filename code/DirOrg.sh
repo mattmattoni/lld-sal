@@ -18,7 +18,7 @@ for SITE in "${SITES[@]}"; do
   # Clean Sub IDs in FS
   for dir in REMBRANDT-x-*; do
     if [ "$SITE" = "UIC" ]; then
-      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM0*([0-9]+)-.*/\1/')
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
     else
       cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
     fi
@@ -29,7 +29,7 @@ for SITE in "${SITES[@]}"; do
   cd "$REST1_DIR"
   for dir in REMBRANDT-x-*; do
     if [ "$SITE" = "UIC" ]; then
-      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM0*([0-9]+)-.*/\1/')
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
     else
       cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
     fi
@@ -40,7 +40,7 @@ for SITE in "${SITES[@]}"; do
   cd "$REST2_DIR"
   for dir in REMBRANDT-x-*; do
     if [ "$SITE" = "UIC" ]; then
-      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM0*([0-9]+)-.*/\1/')
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
     else
       cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
     fi
