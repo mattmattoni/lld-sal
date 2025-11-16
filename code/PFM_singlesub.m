@@ -16,7 +16,7 @@ nWorkers = 5;
 %% Step 1: Temporal Concatenation of fMRI data from all sessions.
 
 % define subject directory and name;
-Subject = '14181';
+Subject = '28419';
 Subdir = ['/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/' Subject];
 
 
