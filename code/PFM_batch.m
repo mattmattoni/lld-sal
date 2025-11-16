@@ -131,21 +131,54 @@ Structures = {'CORTEX_LEFT','CORTEX_RIGHT'}; % in this case, cortex only.
 % calculate the size of each functional brain network
 NetworkSize = pfm_calculate_network_size(FunctionalNetworks,VA,Structures);
 
-% Save network sizes to text file in alphabetical order
-uCi = unique(nonzeros(FunctionalNetworks.data));
+% Determine the same indices the function used (subset to requested Structures)
+BrainStructure = FunctionalNetworks.brainstructure;
+BrainStructure(BrainStructure < 0) = [];
+BrainStructureLabels = FunctionalNetworks.brainstructurelabel;
+Idx = find(ismember(BrainStructure, find(ismember(BrainStructureLabels, Structures))));
+
+% Compute the unique labels present in that subset (same as inside the function)
+uCi = unique(nonzeros(FunctionalNetworks.data(Idx)));
 
 % Create array of network names and sizes, then sort
 NetworkData = cell(length(uCi), 2);
 for i = 1:length(uCi)
-    NetworkData{i,1} = Priors.NetworkLabels{uCi(i)};
-    NetworkData{i,2} = NetworkSize(i);
-end
-NetworkData = sortrows(NetworkData, 1); % Sort by first column (network names)
+    % label value (actual label)
+    label = uCi(i);
 
-% Write to file
+    % safe lookup of name in Priors (fallback if missing)
+    if isfield(Priors, 'NetworkLabels') && label <= numel(Priors.NetworkLabels) && ~isempty(Priors.NetworkLabels{label})
+        NetworkData{i,1} = Priors.NetworkLabels{label};
+    else
+        NetworkData{i,1} = sprintf('Label_%d', label);
+        warning('No prior label name for label %d — using fallback name.', label);
+    end
+
+    % Because pfm_calculate_network_size returned a compact NetworkSize
+    % whose i-th element corresponds to uCi(i), index by i:
+    if i <= numel(NetworkSize)
+        NetworkData{i,2} = NetworkSize(i);
+    else
+        NetworkData{i,2} = NaN;
+        warning('NetworkSize has no element at index %d (numNetworkSize = %d).', i, numel(NetworkSize));
+    end
+end
+
+% Sort by network name
+NetworkData = sortrows(NetworkData, 1);
+
+% Write to file (same as before)
 fid = fopen([PfmDir '/FunctionalNetworkSizes.txt'],'w');
+if fid == -1
+    error('Could not open %s for writing.', fullfile(PfmDir,'FunctionalNetworkSizes.txt'));
+end
 fprintf(fid,'Network\tPercentage\n');
 for i = 1:size(NetworkData, 1)
-    fprintf(fid,'%s\t%.2f\n', NetworkData{i,1}, NetworkData{i,2});
+    if isnan(NetworkData{i,2})
+        fprintf(fid,'%s\tNA\n', NetworkData{i,1});
+    else
+        fprintf(fid,'%s\t%.2f\n', NetworkData{i,1}, NetworkData{i,2});
+    end
 end
 fclose(fid);
+fprintf('Wrote %s\n', fullfile(PfmDir,'FunctionalNetworkSizes.txt'));

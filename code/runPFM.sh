@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=2
 #SBATCH --cpus-per-task=6
-#SBATCH --mem=180G
+#SBATCH --mem=256G
 #SBATCH --time=24:00:00
 #SBATCH --output=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/pfm_batch_%j.log
 #SBATCH --error=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/pfm_batch_%j.err
@@ -33,8 +33,8 @@ process_subject() {
 export -f process_subject
 
 SUBJECT_LIST=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist.txt
-START_LINE=46
-END_LINE=90
+START_LINE=1
+END_LINE=10
 
 echo "Processing subjects $START_LINE-$END_LINE from subject list"
 
