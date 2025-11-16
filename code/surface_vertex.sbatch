@@ -4,8 +4,8 @@
 #SBATCH --job-name=surface-areas
 #SBATCH --nodes=1
 #SBATCH --ntasks=15
-#SBATCH --mem=5G
-#SBATCH --time=4:00:00
+#SBATCH --mem=64G
+#SBATCH --time=24:00:00
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/surface_areas_%j.log
 #SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/surface_areas_%j.e
 
