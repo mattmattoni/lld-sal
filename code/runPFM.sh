@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=2
 #SBATCH --cpus-per-task=6
-#SBATCH --mem=256G
+#SBATCH --mem=240G
 #SBATCH --time=24:00:00
 #SBATCH --output=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/pfm_batch_%j.log
 #SBATCH --error=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/pfm_batch_%j.err
