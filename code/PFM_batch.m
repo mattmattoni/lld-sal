@@ -20,7 +20,7 @@ Subdir = ['/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/' 
 
 
 % define & create the pfm directory;
-PfmDir = [Subdir '/pfm/'];
+PfmDir = ['/scratch/network/mattonim/pfm_output/' Subject '/pfm/'];
 mkdir(PfmDir);
 
 % count the number of imaging sessions;
@@ -66,7 +66,7 @@ pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); 
 [ConcatenatedCifti] = pfm_regress_adjacent_cortex(ConcatenatedCifti,[PfmDir '/DistanceMatrix.mat'],20);
 
 % write out the CIFTI file;
-ft_write_cifti_mod([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti);
+ft_write_cifti_mod([PfmDir 'sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti);
 
 %% Step 3: Smoothing (Done in ciftify)
 
@@ -76,7 +76,7 @@ ft_write_cifti_mod([Subdir '/pfm/sub-' Subject '_task-rest_concatenated_32k_fsLR
 ConcatenatedCifti = ft_read_cifti_mod([PfmDir 'sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii']);
 
 % define inputs;
-DistanceMatrix = [Subdir '/pfm/DistanceMatrix.mat'];
+DistanceMatrix = [PfmDir 'DistanceMatrix.mat'];
 DistanceCutoff = 10;
 GraphDensities = 0.0001;
 NumberReps = 50;
@@ -87,9 +87,9 @@ Structures = {'CORTEX_LEFT','CEREBELLUM_LEFT','ACCUMBENS_LEFT','CAUDATE_LEFT','P
 pfm_infomap(ConcatenatedCifti,DistanceMatrix,PfmDir,GraphDensities,NumberReps,DistanceCutoff,BadVertices,Structures,nWorkers,InfoMapBinary);
 
 % remove some intermediate files (optional)
-system(['rm ' Subdir '/pfm/*.net']);
-system(['rm ' Subdir '/pfm/*.clu']);
-system(['rm ' Subdir '/pfm/*Log*']);
+system(['rm ' PfmDir '*.net']);
+system(['rm ' PfmDir '*.clu']);
+system(['rm ' PfmDir '*Log*']);
 
 % define inputs;
 Input = [PfmDir '/Bipartite_PhysicalCommunities.dtseries.nii'];
