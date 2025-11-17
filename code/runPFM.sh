@@ -33,8 +33,8 @@ process_subject() {
 export -f process_subject
 
 SUBJECT_LIST=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist.txt
-START_LINE=41
-END_LINE=94
+START_LINE=95
+END_LINE=132
 
 echo "Processing subjects $START_LINE-$END_LINE from subject list"
 
