@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUTPUT="/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/data_check.csv"
+OUTPUT="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/data_check.csv"
 
 # Write header
 echo "sub,raw_fs,raw_rest1,raw_rest2,cifti_fs,cifti_rest1,cifti_rest2,useable,processed,pfm" > $OUTPUT
