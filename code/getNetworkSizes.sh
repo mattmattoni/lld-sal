@@ -39,22 +39,24 @@ done
 # Get unique subjects and sort them numerically
 unique_subjects=($(printf '%s\n' "${subjects[@]}" | sort -u | sort -n))
 
-# Define network names in alphabetical order (as they appear in the files)
-networks=(
-    "Auditory"
-    "CinguloOpercular/Action-mode"
-    "Default_Retrosplenial"
-    "DorsalAttention"
-    "MedialParietal"
-    "Premotor/DorsalAttentionII"
-    "Salience"
-    "Somatomotor_Face"
-    "Somatomotor_Foot"
-    "Visual_Dorsal/VentralStream"
-    "Visual_Lateral"
-    "Visual_V1"
-    "Visual_V5"
-)
+# First pass: collect all unique network names across all subjects
+declare -A all_networks
+
+for SUBJ_ID in "${unique_subjects[@]}"; do
+    PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm/FunctionalNetworkSizes.txt"
+    
+    if [ -f "$PFM_FILE" ]; then
+        # Read network names from the file (skip header)
+        while IFS=$'\t' read -r network value; do
+            if [ "$network" != "Network" ]; then
+                all_networks["$network"]=1
+            fi
+        done < "$PFM_FILE"
+    fi
+done
+
+# Convert to sorted array
+networks=($(printf '%s\n' "${!all_networks[@]}" | sort))
 
 # Write header
 header="sub"
@@ -70,18 +72,26 @@ for SUBJ_ID in "${unique_subjects[@]}"; do
     row="$SUBJ_ID"
     
     if [ -f "$PFM_FILE" ]; then
-        # File exists, extract values for each network
+        # Create associative array for this subject's networks
+        declare -A subject_networks
+        
+        # Read the file and store values
+        while IFS=$'\t' read -r network value; do
+            if [ "$network" != "Network" ]; then
+                subject_networks["$network"]="$value"
+            fi
+        done < "$PFM_FILE"
+        
+        # For each network in our master list, get the value or NA
         for network in "${networks[@]}"; do
-            # Escape special characters in network name for grep
-            escaped_network=$(echo "$network" | sed 's/[\/]/\\&/g')
-            value=$(grep "^${escaped_network}" "$PFM_FILE" | awk '{print $2}')
-            
-            if [ -z "$value" ]; then
-                row="${row},NA"
+            if [ -n "${subject_networks[$network]}" ]; then
+                row="${row},${subject_networks[$network]}"
             else
-                row="${row},${value}"
+                row="${row},NA"
             fi
         done
+        
+        unset subject_networks
     else
         # File doesn't exist, fill all network columns with NA
         for network in "${networks[@]}"; do
