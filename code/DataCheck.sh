@@ -60,4 +60,27 @@ for SUBJ_ID in "${unique_subjects[@]}"; do
     DATA_HCP="$BASE_DIR/data_hcp/$SUBJ_ID"
     [ -d "$DATA_HCP/MNINonLinear/fsaverage_LR32k" ] && CIFTI_FS=1 || CIFTI_FS=0
     [ -d "$DATA_HCP/MNINonLinear/Results/rest-1" ] && CIFTI_R1=1 || CIFTI_R1=0
-    [ -d "$DATA_HCP/MNINonLinear/Results/rest-2" ] && CIFTI_R2=1 || CI
+    [ -d "$DATA_HCP/MNINonLinear/Results/rest-2" ] && CIFTI_R2=1 || CIFTI_R2=0
+    
+    # Check useable: raw_fs AND (raw_rest1 OR raw_rest2)
+    if [ "$RAW_FS" -eq 1 ] && { [ "$RAW_R1" -eq 1 ] || [ "$RAW_R2" -eq 1 ]; }; then
+        USEABLE=1
+    else
+        USEABLE=0
+    fi
+    
+    # Check processed: cifti_fs AND (cifti_rest1 OR cifti_rest2)
+    if [ "$CIFTI_FS" -eq 1 ] && { [ "$CIFTI_R1" -eq 1 ] || [ "$CIFTI_R2" -eq 1 ]; }; then
+        PROCESSED=1
+    else
+        PROCESSED=0
+    fi
+    
+    # Check PFM output
+    [ -f "/scratch/network/mattonim/pfm_output/$SUBJ_ID/pfm/FunctionalNetworkSizes.txt" ] && PFM=1 || PFM=0
+    
+    # Write to CSV
+    echo "$SUBJ_ID,$RAW_FS,$RAW_R1,$RAW_R2,$CIFTI_FS,$CIFTI_R1,$CIFTI_R2,$USEABLE,$PROCESSED,$PFM" >> $OUTPUT
+done
+
+echo "Results written to $OUTPUT"
