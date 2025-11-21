@@ -8,4 +8,4 @@
 
 module load python3
 
-python3 extract_salience_communities.py
+python3 getSalienceCommunities.py
