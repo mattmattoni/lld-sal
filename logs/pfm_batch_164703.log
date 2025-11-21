@@ -1,0 +1,82 @@
+Processing subjects 1-45 from subject list
+[Sun Nov 16 02:55:02 PM CST 2025] Starting subject: 001
+[Sun Nov 16 02:55:02 PM CST 2025] Starting subject: 002
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Index exceeds the number of array elements. Index must not exceed 13.
+Index exceeds the number of array elements. Index must not exceed 13.
+
+Error in PFM_batch (line 141)
+    NetworkData{i,2} = NetworkSize(i);
+                       ^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Sun Nov 16 04:05:37 PM CST 2025] Completed subject: 001
+[Sun Nov 16 04:05:37 PM CST 2025] Starting subject: 003
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Current plot held
+[Sun Nov 16 04:06:57 PM CST 2025] Completed subject: 002
+[Sun Nov 16 04:06:57 PM CST 2025] Starting subject: 004
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.

@@ -1,0 +1,1576 @@
+Processing subjects 51-100 from subject list
+[Sun Nov 16 05:31:18 PM CST 2025] Starting subject: 088
+[Sun Nov 16 05:31:18 PM CST 2025] Starting subject: 092
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/088/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 06:32:11 PM CST 2025] Completed subject: 088
+[Sun Nov 16 06:32:11 PM CST 2025] Starting subject: 095
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/092/pfm/FunctionalNetworkSizes.txt
+Connected to parallel pool with 5 workers.
+[Sun Nov 16 06:32:59 PM CST 2025] Completed subject: 092
+[Sun Nov 16 06:32:59 PM CST 2025] Starting subject: 097
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/097/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 07:34:00 PM CST 2025] Completed subject: 097
+[Sun Nov 16 07:34:00 PM CST 2025] Starting subject: 100
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/095/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 07:34:51 PM CST 2025] Completed subject: 095
+[Sun Nov 16 07:34:51 PM CST 2025] Starting subject: 14006
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/100/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 08:34:36 PM CST 2025] Completed subject: 100
+[Sun Nov 16 08:34:36 PM CST 2025] Starting subject: 14008
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14006/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 08:36:20 PM CST 2025] Completed subject: 14006
+[Sun Nov 16 08:36:20 PM CST 2025] Starting subject: 14011
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14008/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 09:34:09 PM CST 2025] Completed subject: 14008
+[Sun Nov 16 09:34:09 PM CST 2025] Starting subject: 14013
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Invalid file identifier. Use fopen to generate a valid file identifier.
+Error using fread
+Invalid file identifier. Use fopen to generate a valid file identifier.
+
+Error in read_nifti2_hdr (line 44)
+hdr.sizeof_hdr = fread(fid, [1 1 ], 'int32=>int32'); % 0
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in ft_read_cifti_mod (line 69)
+hdr = read_nifti2_hdr(filename);
+      ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 42)
+        Cifti = ft_read_cifti_mod([Subdir '/MNINonLinear/Results/rest-' num2str(ii) '/rest-' num2str(ii) '_Atlas_s0.dtseries.nii']);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Sun Nov 16 09:34:23 PM CST 2025] Completed subject: 14013
+[Sun Nov 16 09:34:23 PM CST 2025] Starting subject: 14017
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14011/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 09:38:50 PM CST 2025] Completed subject: 14011
+[Sun Nov 16 09:38:50 PM CST 2025] Starting subject: 14027
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14017/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 10:36:35 PM CST 2025] Completed subject: 14017
+[Sun Nov 16 10:36:35 PM CST 2025] Starting subject: 14031
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14027/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 10:40:32 PM CST 2025] Completed subject: 14027
+[Sun Nov 16 10:40:32 PM CST 2025] Starting subject: 14041
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: X is rank deficient to within machine precision.] 
+[> In regress (line 84)
+In pfm_regress_adjacent_cortex (line 36)
+In PFM_batch (line 66)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14031/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 11:39:25 PM CST 2025] Completed subject: 14031
+[Sun Nov 16 11:39:25 PM CST 2025] Starting subject: 14054
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14041/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 11:42:28 PM CST 2025] Completed subject: 14041
+[Sun Nov 16 11:42:28 PM CST 2025] Starting subject: 14057
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14057/pfm/FunctionalNetworkSizes.txt
+[Mon Nov 17 12:42:20 AM CST 2025] Completed subject: 14057
+[Mon Nov 17 12:42:20 AM CST 2025] Starting subject: 14064
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14054/pfm/FunctionalNetworkSizes.txt
+[Mon Nov 17 12:47:01 AM CST 2025] Completed subject: 14054
+[Mon Nov 17 12:47:01 AM CST 2025] Starting subject: 14076
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14064/pfm/FunctionalNetworkSizes.txt
+[Mon Nov 17 01:42:19 AM CST 2025] Completed subject: 14064
+[Mon Nov 17 01:42:19 AM CST 2025] Starting subject: 14079
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14076/pfm/FunctionalNetworkSizes.txt
+[Mon Nov 17 01:49:30 AM CST 2025] Completed subject: 14076
+[Mon Nov 17 01:49:30 AM CST 2025] Starting subject: 14080
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Parallel pool using the 'Processes' profile is shutting down.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14079/pfm/FunctionalNetworkSizes.txt
+[Mon Nov 17 02:46:40 AM CST 2025] Completed subject: 14079
+[Mon Nov 17 02:46:40 AM CST 2025] Starting subject: 14083
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14080/pfm/FunctionalNetworkSizes.txt
+[Mon Nov 17 02:51:50 AM CST 2025] Completed subject: 14080
+[Mon Nov 17 02:51:50 AM CST 2025] Starting subject: 14087
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+
+While running:
+/mmfs1/home/mattonim/workbench/bin_linux64/../exe_linux64/wb_command -cifti-find-clusters /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14087/pfm//temp_303.dtseries.nii 0 50 0 50 COLUMN /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14087/pfm//temp_303.dtseries.nii -left-surface /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14087/MNINonLinear/fsaverage_LR32k/14087.L.midthickness.32k_fs_LR.surf.gii -right-surface /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14087/MNINonLinear/fsaverage_LR32k/14087.R.midthickness.32k_fs_LR.surf.gii -merged-volume
+
+ERROR: nifti file is truncated: /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14087/pfm//temp_303.dtseries.nii
+
+/home/mattonim/workbench/bin_linux64/wb_command -cifti-find-clusters /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14087/pfm//temp_303.dtseries.nii 0 50 0 50 COLUMN /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14087/pfm//temp_303.dtseries.nii -left-surface /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14087/MNINonLinear/fsaverage_LR32k/14087.L.midthickness.32k_fs_LR.surf.gii -right-surface /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14087/MNINonLinear/fsaverage_LR32k/14087.R.midthickness.32k_fs_LR.surf.gii -merged-volume: Signal 127
+cifti requires a header extension
+Error using ft_read_cifti_mod (line 94)
+cifti requires a header extension
+
+Error in pfm_spatial_filtering (line 33)
+        C = ft_read_cifti_mod([OutDir '/temp_' num2str(i) '.dtseries.nii']); % read in CIFTI post-removal of small networks;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 100)
+pfm_spatial_filtering(Input,PfmDir,Output,MidthickSurfs,MinSize,WorkbenchBinary);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While running:
+/mmfs1/home/mattonim/workbench/bin_linux64/../exe_linux64/wb_command -cifti-find-clusters /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14083/pfm//temp_263.dtseries.nii 0 50 0 50 COLUMN /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14083/pfm//temp_263.dtseries.nii -left-surface /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14083/MNINonLinear/fsaverage_LR32k/14083.L.midthickness.32k_fs_LR.surf.gii -right-surface /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14083/MNINonLinear/fsaverage_LR32k/14083.R.midthickness.32k_fs_LR.surf.gii -merged-volume
+
+ERROR: failed to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14083/pfm//temp_263.dtseries.nii'.  Tried to write 631820 bytes but actually wrote 0 bytes.
+
+/home/mattonim/workbench/bin_linux64/wb_command -cifti-find-clusters /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14083/pfm//temp_263.dtseries.nii 0 50 0 50 COLUMN /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14083/pfm//temp_263.dtseries.nii -left-surface /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14083/MNINonLinear/fsaverage_LR32k/14083.L.midthickness.32k_fs_LR.surf.gii -right-surface /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14083/MNINonLinear/fsaverage_LR32k/14083.R.midthickness.32k_fs_LR.surf.gii -merged-volume: Signal 127
+[XMLTree] Cannot open 
+Error using xmltree (line 47)
+[XMLTree] Cannot open 
+
+Error in ft_read_cifti_mod (line 136)
+tree = xmltree(xmldata);
+       ^^^^^^^^^^^^^^^^
+Error in pfm_spatial_filtering (line 33)
+        C = ft_read_cifti_mod([OutDir '/temp_' num2str(i) '.dtseries.nii']); % read in CIFTI post-removal of small networks;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 100)
+pfm_spatial_filtering(Input,PfmDir,Output,MidthickSurfs,MinSize,WorkbenchBinary);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 03:59:43 AM CST 2025] Completed subject: 14087
+[Mon Nov 17 03:59:43 AM CST 2025] Starting subject: 14094
+[Mon Nov 17 03:59:47 AM CST 2025] Completed subject: 14083
+[Mon Nov 17 03:59:47 AM CST 2025] Starting subject: 14098
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14098/pfm//tmp/temp_224.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14098/pfm//tmp/temp_224.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14094/pfm//tmp/temp_860.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14094/pfm//tmp/temp_860.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:01:17 AM CST 2025] Completed subject: 14098
+[Mon Nov 17 04:01:17 AM CST 2025] Starting subject: 14110
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:01:20 AM CST 2025] Completed subject: 14094
+[Mon Nov 17 04:01:20 AM CST 2025] Starting subject: 14112
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+[Warning: The Cluster reported an error while destroying a job. The error was:
+Unable to open file
+"/mmfs1/home/mattonim/.matlab/local_cluster_jobs/R2024b/Job142.in.mat", the
+error returned was: Unable to find file or directory
+'/mmfs1/home/mattonim/.matlab/local_cluster_jobs/R2024b/Job142.in.mat'...] 
+[> In parallel.internal.cluster.CJSJobMethods.destroyOneJob (line 79)
+In parallel.job.CJSCommunicatingJob>@(job)CJSJobMethods.destroyOneJob(job.Parent,job,job.Support,job.SupportID) (line 115)
+In parallel.job/CJSCommunicatingJob/destroyJob (line 115)
+In parallel.Job>iDeleteJobs (line 1699)
+In parallel.internal.cluster.hetfun (line 57)
+In parallel/Job/delete (line 1495)
+In parallel/Cluster/hDeleteOneJob (line 1029)
+In parallel.internal.pool.AbstractInteractiveClient>iDeleteJobs (line 296)
+In parallel.internal.pool/AbstractInteractiveClient/pRemoveOldJobs (line 184)
+In parallel.internal.pool/AbstractInteractiveClient/start (line 81)
+In parallel.internal.pool.AbstractClusterPool>iStartClient (line 783)
+In parallel.internal.pool.AbstractClusterPool.hBuildPool (line 623)
+In parallel.internal.pool.doParpool (line 22)
+In parpool (line 118)
+In pfm_make_dmat (line 5)
+In PFM_batch (line 62)
+In run (line 112)] 
+[Warning: The Cluster reported an error while destroying a job. The error was:
+Unable to open file
+"/mmfs1/home/mattonim/.matlab/local_cluster_jobs/R2024b/Job144.in.mat", the
+error returned was: Unable to find file or directory
+'/mmfs1/home/mattonim/.matlab/local_cluster_jobs/R2024b/Job144.in.mat'...] 
+[> In parallel.internal.cluster.CJSJobMethods.destroyOneJob (line 79)
+In parallel.job.CJSCommunicatingJob>@(job)CJSJobMethods.destroyOneJob(job.Parent,job,job.Support,job.SupportID) (line 115)
+In parallel.job/CJSCommunicatingJob/destroyJob (line 115)
+In parallel.Job>iDeleteJobs (line 1699)
+In parallel.internal.cluster.hetfun (line 57)
+In parallel/Job/delete (line 1495)
+In parallel/Cluster/hDeleteOneJob (line 1029)
+In parallel.internal.pool.AbstractInteractiveClient>iDeleteJobs (line 296)
+In parallel.internal.pool/AbstractInteractiveClient/pRemoveOldJobs (line 184)
+In parallel.internal.pool/AbstractInteractiveClient/start (line 81)
+In parallel.internal.pool.AbstractClusterPool>iStartClient (line 783)
+In parallel.internal.pool.AbstractClusterPool.hBuildPool (line 623)
+In parallel.internal.pool.doParpool (line 22)
+In parpool (line 118)
+In pfm_make_dmat (line 5)
+In PFM_batch (line 62)
+In run (line 112)] 
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14112/pfm//tmp/temp_1154.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14112/pfm//tmp/temp_1154.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14110/pfm//tmp/temp_281.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14110/pfm//tmp/temp_281.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:02:17 AM CST 2025] Completed subject: 14110
+[Mon Nov 17 04:02:17 AM CST 2025] Starting subject: 14115
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:02:18 AM CST 2025] Completed subject: 14112
+[Mon Nov 17 04:02:18 AM CST 2025] Starting subject: 14118
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14118/pfm//tmp/temp_295.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14118/pfm//tmp/temp_295.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:03:13 AM CST 2025] Completed subject: 14118
+[Mon Nov 17 04:03:13 AM CST 2025] Starting subject: 14120
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14115/pfm//tmp/temp_554.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14115/pfm//tmp/temp_554.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:04:05 AM CST 2025] Completed subject: 14115
+[Mon Nov 17 04:04:05 AM CST 2025] Starting subject: 14129
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14120/pfm//tmp/temp_1173.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14120/pfm//tmp/temp_1173.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:04:21 AM CST 2025] Completed subject: 14120
+[Mon Nov 17 04:04:22 AM CST 2025] Starting subject: 14132
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14129/pfm//tmp/temp_882.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14129/pfm//tmp/temp_882.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:04:51 AM CST 2025] Completed subject: 14129
+[Mon Nov 17 04:04:51 AM CST 2025] Starting subject: 14136
+Connected to parallel pool with 5 workers.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14132/pfm//tmp/temp_1481.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14132/pfm//tmp/temp_1481.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:05:18 AM CST 2025] Completed subject: 14132
+[Mon Nov 17 04:05:18 AM CST 2025] Starting subject: 14137
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+[Warning: Unable to load Toolbox Path Cache
+/home/mattonim/.matlab/R2024b/toolbox_cache-24.2.0-107649670-glnxa64.xml. The
+cache file is not in the correct format. It will be regenerated upon quitting
+MATLAB.] 
+Connected to parallel pool with 5 workers.
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14136/pfm//tmp/temp_280.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14136/pfm//tmp/temp_280.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:06:04 AM CST 2025] Completed subject: 14136
+[Mon Nov 17 04:06:04 AM CST 2025] Starting subject: 14145
+Connected to parallel pool with 5 workers.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14137/pfm//tmp/temp_1476.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14137/pfm//tmp/temp_1476.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:06:33 AM CST 2025] Completed subject: 14137
+[Mon Nov 17 04:06:33 AM CST 2025] Starting subject: 14148
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Connected to parallel pool with 5 workers.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14145/pfm//tmp/temp_1472.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14145/pfm//tmp/temp_1472.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:06:59 AM CST 2025] Completed subject: 14145
+[Mon Nov 17 04:06:59 AM CST 2025] Starting subject: 14164
+Connected to parallel pool with 5 workers.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+[Warning: Unable to load Toolbox Path Cache
+/home/mattonim/.matlab/R2024b/toolbox_cache-24.2.0-107649670-glnxa64.xml. The
+cache file is not in the correct format. It will be regenerated upon quitting
+MATLAB.] 
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14148/pfm//tmp/temp_295.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14148/pfm//tmp/temp_295.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:07:16 AM CST 2025] Completed subject: 14148
+[Mon Nov 17 04:07:16 AM CST 2025] Starting subject: 14168
+Starting parallel pool (parpool) using the 'Processes' profile ...
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14168/pfm//tmp/temp_1481.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14168/pfm//tmp/temp_1481.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:08:01 AM CST 2025] Completed subject: 14168
+[Mon Nov 17 04:08:01 AM CST 2025] Starting subject: 14171
+[GIFTI] Loading of XML file /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14164/pfm//tmp/temp_767.shape.gii failed.
+Error using read_gifti_file (line 17)
+[GIFTI] Loading of XML file
+/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14164/pfm//tmp/temp_767.shape.gii
+failed.
+
+Error in gifti (line 71)
+                this = read_gifti_file(varargin{1},giftistruct);
+
+Error in pfm_make_dmat (line 37)
+parfor i = 1:length(LH_verts)
+
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:08:12 AM CST 2025] Completed subject: 14164
+[Mon Nov 17 04:08:12 AM CST 2025] Starting subject: 14172
+Starting parallel pool (parpool) using the 'Processes' profile ...
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Invalid file identifier. Use fopen to generate a valid file identifier.
+Error using fread
+Invalid file identifier. Use fopen to generate a valid file identifier.
+
+Error in read_nifti2_hdr (line 44)
+hdr.sizeof_hdr = fread(fid, [1 1 ], 'int32=>int32'); % 0
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in ft_read_cifti_mod (line 69)
+hdr = read_nifti2_hdr(filename);
+      ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 42)
+        Cifti = ft_read_cifti_mod([Subdir '/MNINonLinear/Results/rest-' num2str(ii) '/rest-' num2str(ii) '_Atlas_s0.dtseries.nii']);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 04:08:26 AM CST 2025] Completed subject: 14172
+[Mon Nov 17 04:08:26 AM CST 2025] Starting subject: 14180
+Connected to parallel pool with 5 workers.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14171/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14171/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Parallel pool using the 'Processes' profile is shutting down.
+[Mon Nov 17 04:45:35 AM CST 2025] Completed subject: 14171
+[Mon Nov 17 04:45:35 AM CST 2025] Starting subject: 14181
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14180/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14180/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Starting parallel pool (parpool) using the 'Processes' profile ...
+[Mon Nov 17 04:45:51 AM CST 2025] Completed subject: 14180
+[Mon Nov 17 04:45:51 AM CST 2025] Starting subject: 14185
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14181/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14181/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 05:23:06 AM CST 2025] Completed subject: 14181
+[Mon Nov 17 05:23:06 AM CST 2025] Starting subject: 14187
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14185/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14185/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 05:23:11 AM CST 2025] Completed subject: 14185
+[Mon Nov 17 05:23:11 AM CST 2025] Starting subject: 14205
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14187/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14187/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 06:01:04 AM CST 2025] Completed subject: 14187
+[Mon Nov 17 06:01:04 AM CST 2025] Starting subject: 14206
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14205/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14205/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+[Mon Nov 17 06:01:12 AM CST 2025] Completed subject: 14205
+[Mon Nov 17 06:01:12 AM CST 2025] Starting subject: 14210
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14210/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14210/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 06:39:01 AM CST 2025] Completed subject: 14210
+[Mon Nov 17 06:39:01 AM CST 2025] Starting subject: 14211
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14206/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14206/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 06:40:24 AM CST 2025] Completed subject: 14206
+[Mon Nov 17 06:40:24 AM CST 2025] Starting subject: 14213
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14211/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14211/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 07:18:03 AM CST 2025] Completed subject: 14211
+[Mon Nov 17 07:18:03 AM CST 2025] Starting subject: 14226
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14213/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14213/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 07:19:16 AM CST 2025] Completed subject: 14213
+[Mon Nov 17 07:19:16 AM CST 2025] Starting subject: 14236
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14226/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14226/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 07:55:44 AM CST 2025] Completed subject: 14226
+[Mon Nov 17 07:55:44 AM CST 2025] Starting subject: 14241
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14236/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14236/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 07:56:58 AM CST 2025] Completed subject: 14236
+Parallel pool using the 'Processes' profile is shutting down.
+Unable to write file '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14241/pfm/DistanceMatrixCortexOnly.mat'.
+Error using save
+Unable to write file
+'/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/14241/pfm/DistanceMatrixCortexOnly.mat'.
+
+Error in pfm_make_dmat (line 77)
+save([OutDir '/DistanceMatrixCortexOnly'],'D','-v7.3');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in PFM_batch (line 62)
+pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); %
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[Mon Nov 17 08:37:55 AM CST 2025] Completed subject: 14241
+All subjects completed!

@@ -1,0 +1,21 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_singlesub (line 88)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held

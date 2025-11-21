@@ -1,0 +1,286 @@
+Processing subjects 1-10 from subject list
+[Sun Nov 16 04:24:01 PM CST 2025] Starting subject: 001
+[Sun Nov 16 04:24:01 PM CST 2025] Starting subject: 002
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+[Warning: The Cluster reported an error while destroying a job. The error was:
+Unable to open file
+"/mmfs1/home/mattonim/.matlab/local_cluster_jobs/R2024b/Job3.in.mat", the error
+returned was: Unable to find file or directory
+'/mmfs1/home/mattonim/.matlab/local_cluster_jobs/R2024b/Job3.in.mat'...] 
+[> In parallel.internal.cluster.CJSJobMethods.destroyOneJob (line 79)
+In parallel.job.CJSCommunicatingJob>@(job)CJSJobMethods.destroyOneJob(job.Parent,job,job.Support,job.SupportID) (line 115)
+In parallel.job/CJSCommunicatingJob/destroyJob (line 115)
+In parallel.Job>iDeleteJobs (line 1699)
+In parallel.internal.cluster.hetfun (line 57)
+In parallel/Job/delete (line 1495)
+In parallel/Cluster/hDeleteOneJob (line 1029)
+In parallel.internal.pool.AbstractInteractiveClient>iDeleteJobs (line 296)
+In parallel.internal.pool/AbstractInteractiveClient/pRemoveOldJobs (line 184)
+In parallel.internal.pool/AbstractInteractiveClient/start (line 81)
+In parallel.internal.pool.AbstractClusterPool>iStartClient (line 783)
+In parallel.internal.pool.AbstractClusterPool.hBuildPool (line 623)
+In parallel.internal.pool.doParpool (line 22)
+In parpool (line 118)
+In pfm_make_dmat (line 5)
+In PFM_batch (line 62)
+In run (line 112)] 
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/001/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 05:20:35 PM CST 2025] Completed subject: 001
+[Sun Nov 16 05:20:35 PM CST 2025] Starting subject: 003
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/002/pfm/FunctionalNetworkSizes.txt
+Connected to parallel pool with 5 workers.
+[Sun Nov 16 05:21:16 PM CST 2025] Completed subject: 002
+[Sun Nov 16 05:21:16 PM CST 2025] Starting subject: 004
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/003/pfm/FunctionalNetworkSizes.txt
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/004/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 06:17:45 PM CST 2025] Completed subject: 003
+[Sun Nov 16 06:17:45 PM CST 2025] Starting subject: 005
+[Sun Nov 16 06:17:47 PM CST 2025] Completed subject: 004
+[Sun Nov 16 06:17:47 PM CST 2025] Starting subject: 007
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/007/pfm/FunctionalNetworkSizes.txt
+Current plot held
+[Sun Nov 16 07:15:18 PM CST 2025] Completed subject: 007
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/005/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 07:15:18 PM CST 2025] Starting subject: 008
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+[Sun Nov 16 07:15:33 PM CST 2025] Completed subject: 005
+[Sun Nov 16 07:15:33 PM CST 2025] Starting subject: 009
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/009/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 08:12:25 PM CST 2025] Completed subject: 009
+[Sun Nov 16 08:12:25 PM CST 2025] Starting subject: 010
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/008/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 08:13:32 PM CST 2025] Completed subject: 008
+[Sun Nov 16 08:13:32 PM CST 2025] Starting subject: 011
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+                  R2024b (24.2.0.2712019) 64-bit (glnxa64)
+                              August 22, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+[Warning: Directory already exists.] 
+[> In pfm_infomap (line 26)
+In PFM_batch (line 87)
+In run (line 112)] 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 5 workers.
+Starting parallel pool (parpool) using the 'Processes' profile ...
+[Warning: The Cluster reported an error while destroying a job. The error was:
+Unable to open file
+"/mmfs1/home/mattonim/.matlab/local_cluster_jobs/R2024b/Job53.in.mat", the
+error returned was: Unable to find file or directory
+'/mmfs1/home/mattonim/.matlab/local_cluster_jobs/R2024b/Job53.in.mat'...] 
+[> In parallel.internal.cluster.CJSJobMethods.destroyOneJob (line 79)
+In parallel.job.CJSCommunicatingJob>@(job)CJSJobMethods.destroyOneJob(job.Parent,job,job.Support,job.SupportID) (line 115)
+In parallel.job/CJSCommunicatingJob/destroyJob (line 115)
+In parallel.Job>iDeleteJobs (line 1699)
+In parallel.internal.cluster.hetfun (line 57)
+In parallel/Job/delete (line 1495)
+In parallel/Cluster/hDeleteOneJob (line 1029)
+In parallel.internal.pool.AbstractInteractiveClient>iDeleteJobs (line 296)
+In parallel.internal.pool/AbstractInteractiveClient/pRemoveOldJobs (line 184)
+In parallel.internal.pool/AbstractInteractiveClient/start (line 81)
+In parallel.internal.pool.AbstractClusterPool>iStartClient (line 783)
+In parallel.internal.pool.AbstractClusterPool.hBuildPool (line 623)
+In parallel.internal.pool.doParpool (line 22)
+In parpool (line 118)
+In pfm_infomap (line 118)
+In PFM_batch (line 87)
+In run (line 112)] 
+Connected to parallel pool with 5 workers.
+Parallel pool using the 'Processes' profile is shutting down.
+Parallel pool using the 'Processes' profile is shutting down.
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/010/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 09:12:11 PM CST 2025] Completed subject: 010
+Current plot held
+Wrote /home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/011/pfm/FunctionalNetworkSizes.txt
+[Sun Nov 16 09:13:25 PM CST 2025] Completed subject: 011
+All subjects completed!
