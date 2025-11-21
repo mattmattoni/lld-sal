@@ -1,4 +1,0 @@
-environment: line 1: 3689894 Killed                  matlab -nodisplay -nosplash -r "Subject='$SUBJECT'; try, run('$MATLAB_SCRIPT'); catch ME, disp(ME.message); disp(getReport(ME)); end; exit"
-environment: line 1: 3689887 Killed                  matlab -nodisplay -nosplash -r "Subject='$SUBJECT'; try, run('$MATLAB_SCRIPT'); catch ME, disp(ME.message); disp(getReport(ME)); end; exit"
-slurmstepd: error: *** JOB 164708 ON a-006 CANCELLED AT 2025-11-16T16:12:13 ***
-slurmstepd: error: Detected 2 oom_kill events in StepId=164708.batch. Some of the step tasks have been OOM Killed.

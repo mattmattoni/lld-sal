@@ -1,5 +1,0 @@
-Seq	Host	Starttime	JobRuntime	Send	Receive	Exitval	Signal	Command
-1	:	1763394013.229	  3520.039	0	3403	0	0	process_subject 001
-2	:	1763394013.232	  3576.572	0	959	0	0	process_subject 002
-4	:	1763397589.812	  3539.208	0	959	0	0	process_subject 004
-3	:	1763397533.341	  3595.855	0	959	0	0	process_subject 003
