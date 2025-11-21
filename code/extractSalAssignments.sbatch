@@ -3,7 +3,7 @@
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/extract_salience_%j.log
 #SBATCH --time=01:00:00
 #SBATCH --mem=4G
-#SBATCH --partition=short
+#SBATCH --partition=batch
 
 # Define paths
 PFM_BASE="/scratch/network/mattonim/pfm_output"
