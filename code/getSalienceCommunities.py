@@ -58,3 +58,5 @@ if results:
     print(f"Found {len(final_df)} salience communities across {len(results)} subjects")
     print(f"Output: {OUTPUT_CSV}")
 else:
+    print("No salience networks found!")
+    sys.exit(1)
