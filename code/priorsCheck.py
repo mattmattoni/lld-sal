@@ -13,8 +13,8 @@ config_file = '/scratch/network/mattonim/sphere_files/salience_config.txt'
 with open(config_file, 'w') as f:
     f.write(config_content)
 
-# Path to your salience CIFTI file
-salience_file = '/scratch/network/mattonim/sphere_files/salience_prior_32k.dtseries.nii'
+# Path to your salience file - NOW USING THE FULL 32K .MAT FILE
+salience_file = '/scratch/network/mattonim/sphere_files/salience_32k_full.mat'
 
 # Create DataParams object
 ref_params = cnc.compute_overlap_with_atlases.DataParams(config_file, salience_file)
@@ -24,7 +24,7 @@ atlas_names = [
     "XS268_8",        
     "TY7",           
     "TY17", 
-    "EG27",       
+    "EG17",  # Fixed typo: was EG27, should be EG17     
 ]
 
 # Output directory
@@ -37,3 +37,5 @@ cnc.compute_overlap_with_atlases.network_correspondence(
     atlas_names,
     output_dir
 )
+
+print(f"\nResults saved to: {output_dir}")
