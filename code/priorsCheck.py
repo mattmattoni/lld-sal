@@ -1,3 +1,6 @@
+import os
+os.environ['DISABLE_NCT_AUTO_UPDATE'] = '1'
+
 import cbig_network_correspondence as cnc
 
 # Create config file for your salience priors
