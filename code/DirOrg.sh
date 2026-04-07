@@ -1,32 +1,32 @@
 #!/bin/bash
 
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
-SITES=(UIC VUMC UPMC)
+SITES=(UIC)
 
 for SITE in "${SITES[@]}"; do
 
-  FS_DIR=$PROJECT_DIR/Baseline-FS-$SITE
-  REST1_DIR=$PROJECT_DIR/Baseline-fMRI_REST1-$SITE
-  REST2_DIR=$PROJECT_DIR/Baseline-fMRI_REST2-$SITE
+  #FS_DIR=$PROJECT_DIR/Baseline-FS-$SITE
+  REST1_DIR=$PROJECT_DIR/Baseline-run1-$SITE
+  REST2_DIR=$PROJECT_DIR/Baseline-run2-$SITE
 
   # Remove SUBJ subdir in FS
-  cd "$FS_DIR"
-  for dir in REMBRANDT-x-*; do
-    if [ -d "$dir/SUBJ" ]; then
-      mv "$dir/SUBJ"/* "$dir/"
-      rmdir "$dir/SUBJ"
-    fi
-  done
+  #cd "$FS_DIR"
+  #for dir in REMBRANDT-x-*; do
+  #  if [ -d "$dir/SUBJ" ]; then
+  #    mv "$dir/SUBJ"/* "$dir/"
+  #    rmdir "$dir/SUBJ"
+  #  fi
+  #done
 
   # Clean Sub IDs in FS
-  for dir in REMBRANDT-x-*; do
-    if [ "$SITE" = "UIC" ]; then
-      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
-    else
-      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
-    fi
-    mv "$dir" "$cleandir"
-  done
+  #for dir in REMBRANDT-x-*; do
+  #  if [ "$SITE" = "UIC" ]; then
+  #    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
+  #  else
+  #    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+  #  fi
+  #  mv "$dir" "$cleandir"
+  #done
 
   # Clean Sub IDs in REST1
   cd "$REST1_DIR"
