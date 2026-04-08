@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
-SITES=(VUMC)
+SITES=(VUMC UPMC)
 
 for SITE in "${SITES[@]}"; do
 
