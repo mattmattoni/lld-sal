@@ -7,7 +7,7 @@
 #SBATCH --mem=128G
 #SBATCH --time=48:00:00
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/ciftify_func_%j.log
-#SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/ciftify_func_%j.e
+#SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/ciftify_func_%j.err
 
 export PATH=$HOME/.local/bin:$PATH
 module load parallel/20230722-GCCcore-12.2.0
@@ -22,14 +22,14 @@ for SITE in "${SITES[@]}"; do
     for RUN in "${RUNS[@]}"; do
 
     FS_SITE=Baseline-FS-$SITE 
-    FMRI_SITE=Baseline-fMRI_REST$RUN-$SITE
+    FMRI_SITE=Baseline-run$RUN-$SITE
     FUNC_LABEL=rest-$RUN
 
     export CIFTIFY_IMG PROJECT_DIR FS_SITE FMRI_SITE FUNC_LABEL
 
     fmri_process_subject() {
         SUBJECT_ID=$1
-        FUNC_NIFTI=$FMRI_SITE/$SUBJECT_ID/PREPROC/wbet_rtaREST.nii.gz
+        FUNC_NIFTI=$FMRI_SITE/$SUBJECT_ID/PREPROC/wbet_rtaREST_spm_res_bpf.nii.gz
 
         echo "[$(date)] Starting subject: $SUBJECT_ID"
 
