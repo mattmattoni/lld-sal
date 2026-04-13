@@ -28,7 +28,8 @@ print("Loading salience communities data...")
 df = pd.read_csv(INPUT_CSV, dtype={'Subject': str})
 
 # Get all subjects
-all_subjects = sorted([d.name for d in Path(PFM_BASE).iterdir() if d.is_dir()])
+all_subjects = sorted([d.name for d in Path(PFM_BASE).iterdir() 
+                       if d.is_dir() and d.name != 'nct_inputs' and d.name != 'nct_results'])
 
 print(f"Found {len(all_subjects)} subjects in PFM output")
 
@@ -49,8 +50,8 @@ for idx, subj in enumerate(all_subjects, 1):
     print(f"  Found {len(subj_data)} salience communities")
     
     # Path to dlabel file
-    dlabel_file = os.path.join(PFM_BASE, subj, "pfm", 
-                               "Bipartite_PhysicalCommunities+AlgorithmicLabeling.dlabel.nii")
+    dlabel_file = os.path.join(PFM_BASE, subj, "pfm",
+                           "Bipartite_PhysicalCommunities.dtseries.nii")
     
     if not os.path.exists(dlabel_file):
         print(f"  WARNING: dlabel file not found")
@@ -76,11 +77,12 @@ for idx, subj in enumerate(all_subjects, 1):
         temp_dscalar = os.path.join(subj_nct_dir, f"temp_community_{community}.dscalar.nii")
         
         cmd = [
-            WB_COMMAND, "-cifti-label-to-roi",
-            dlabel_file,
+            WB_COMMAND, "-cifti-math",
+            f"(x == {community})",
             temp_dscalar,
-            "-key", str(community)
+            "-var", "x", dlabel_file
         ]
+
         
         result = subprocess.run(cmd, capture_output=True, text=True)
         
