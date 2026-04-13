@@ -12,4 +12,4 @@
 module load python3
 pip install --user nibabel scipy
 
-python3 prepNCT.py
+python3 NCT.py
