@@ -86,6 +86,8 @@ for idx, subj in enumerate(all_subjects, 1):
         
         if result.returncode != 0:
             print(f"    WARNING: Failed to extract community {community}")
+            print(f"    STDERR: {result.stderr}") 
+            print(f"    STDOUT: {result.stdout}")
             results.append({
                 'Subject': subj,
                 'Community': community,

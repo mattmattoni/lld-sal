@@ -1,6 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=prep_nct
 #SBATCH --output=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/prep_nct_%j.log
+#SBATCH --error=/projects/psych_oajilore_chi/mattonim/lld-sal/logs/prep_nct_%j.err
 #SBATCH --time=02:00:00
 #SBATCH --mem=4G
 #SBATCH --partition=batch
