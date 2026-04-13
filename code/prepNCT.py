@@ -158,9 +158,10 @@ for idx, subj in enumerate(all_subjects, 1):
             # Create config file
             config_file = os.path.join(subj_nct_dir, f"community_{community}_config.yaml")
             with open(config_file, 'w') as f:
-                f.write(f"name: '{subj}_community_{community}'\n")
-                f.write("space: 'fs_LR_32k'\n")
-                f.write("type: 'Hard'\n")
+                f.write("[data_info]\n")
+                f.write(f"Data_Name: '{subj}_community_{community}'\n")
+                f.write("Data_Space: fs_LR_32k\n")
+                f.write("Data_Type: Hard\n")
             
             print(f"    Created config: {config_file}")
             
