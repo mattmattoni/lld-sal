@@ -26,14 +26,13 @@ print(f"Skipping {len(df) - len(valid_communities)} subcortical-only communities
 results = []
 
 # Process each community
-for idx, row in valid_communities.iterrows():
+for counter, (idx, row) in enumerate(valid_communities.iterrows(), 1):
+    print(f"[{counter}/{len(valid_communities)}]")
     subj = row['Subject']
     comm = row['Community']
     mat_file = row['nct_input_file']
     config_file = row['config_file']
-    
-    print(f"\n[{idx+1}/{len(valid_communities)}] Analyzing {subj} - Community {comm}")
-    
+        
     # Create output directory for this community
     comm_output_dir = os.path.join(NCT_OUTPUT_BASE, f"{subj}_comm{comm}")
     os.makedirs(comm_output_dir, exist_ok=True)
