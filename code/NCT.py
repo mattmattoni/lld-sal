@@ -138,7 +138,8 @@ except Exception as e:
             
         else:
             print(f"  ✗ NCT analysis failed")
-            print(f"    Error: {result.stderr[:200] if result.stderr else result.stdout[:200]}")
+            print(result.stdout)
+            print(result.stderr)
             
             results.append({
                 'Subject': subj,
