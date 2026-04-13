@@ -6,7 +6,7 @@
 #SBATCH --ntasks=2
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=240G
-#SBATCH --time=1:00:00
+#SBATCH --time=24:00:00
 #SBATCH --partition=batch
 
 module load python3
