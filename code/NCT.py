@@ -32,11 +32,11 @@ for counter, (idx, row) in enumerate(valid_communities.iterrows(), 1):
     comm = row['Community']
     mat_file = row['nct_input_file']
     config_file = row['config_file']
-        
+
     # Create output directory for this community
     comm_output_dir = os.path.join(NCT_OUTPUT_BASE, f"{subj}_comm{comm}")
     os.makedirs(comm_output_dir, exist_ok=True)
-    
+
     # Run NCT using Python API
     try:
         # Create NCT analysis script
@@ -66,31 +66,36 @@ except Exception as e:
     traceback.print_exc()
     sys.exit(1)
 """
-        
+
         temp_script = f"/tmp/nct_run_{subj}_{comm}.py"
         with open(temp_script, 'w') as f:
             f.write(nct_script)
-        
+
         # Run NCT
         result = subprocess.run(
             ['python3', temp_script],
             capture_output=True,
             text=True,
-            timeout=300  # 5 minute timeout per community
+            timeout=300
         )
-        
+
         # Clean up temp script
         os.remove(temp_script)
-        
+
         if "NCT_SUCCESS" in result.stdout:
             print(f"  ✓ NCT analysis complete")
-            
-            # Parse results from output files
-            gordon_dice = yeo_dice = 'NA'
-            gordon_p = yeo_p = 'NA'
-            gordon_net = yeo_net = 'NA'
-            
-            # Look for summary CSV files
+
+            result_row = {
+                'Subject': subj,
+                'Community': comm,
+                'Network': row['Network'],
+                'FC_Similarity': row['FC_Similarity'],
+                'Spatial_Score': row['Spatial_Score'],
+                'Confidence': row['Confidence'],
+                'Alt_1_Network': row['Alt_1_Network'],
+                'NCT_status': 'Complete'
+            }
+
             for csv_file in Path(comm_output_dir).glob("*.csv"):
                 try:
                     res_df = pd.read_csv(csv_file)
@@ -98,50 +103,36 @@ except Exception as e:
                     if 'group' not in res_df.columns or 'dice' not in res_df.columns:
                         continue
 
-                    # EG17 (Gordon) results
-                    eg17_rows = res_df[res_df['group'] == 'EG17']
-                    sal_rows = eg17_rows[eg17_rows['name'].str.contains('Salience|CingOperc', case=False, na=False)]
-                    if not sal_rows.empty:
-                        best = sal_rows.loc[sal_rows['dice'].idxmax()]
-                        gordon_dice = f"{best['dice']:.4f}"
-                        gordon_p = f"{best['p_value']:.4f}"
-                        gordon_net = best['name']
+                    # Add dice and p_value for every network in both atlases
+                    for _, net_row in res_df.iterrows():
+                        group = net_row['group']
+                        name = net_row['name']
+                        result_row[f'{group}_{name}_dice'] = f"{net_row['dice']:.4f}"
+                        result_row[f'{group}_{name}_p_value'] = f"{net_row['p_value']:.4f}"
 
-                    # TY17 (Yeo) results
-                    ty17_rows = res_df[res_df['group'] == 'TY17']
-                    sal_rows = ty17_rows[ty17_rows['name'].str.contains('Sal|VenAttn', case=False, na=False)]
-                    if not sal_rows.empty:
-                        best = sal_rows.loc[sal_rows['dice'].idxmax()]
-                        yeo_dice = f"{best['dice']:.4f}"
-                        yeo_p = f"{best['p_value']:.4f}"
-                        yeo_net = best['name']
+                    # Best network overall for each atlas (lowest p_value, then highest dice as tiebreaker)
+                    for group in ['EG17', 'TY17']:
+                        group_rows = res_df[res_df['group'] == group]
+                        if not group_rows.empty:
+                            best = group_rows.sort_values(
+                                ['p_value', 'dice'],
+                                ascending=[True, False]
+                            ).iloc[0]
+                            result_row[f'{group}_best_network'] = best['name']
+                            result_row[f'{group}_best_dice'] = f"{best['dice']:.4f}"
+                            result_row[f'{group}_best_p_value'] = f"{best['p_value']:.4f}"
 
                 except Exception as e:
                     print(f"    Warning: Could not parse {csv_file.name}: {e}")
                     continue
-            
-            results.append({
-                'Subject': subj,
-                'Community': comm,
-                'Network': row['Network'],
-                'FC_Similarity': row['FC_Similarity'],
-                'Spatial_Score': row['Spatial_Score'],
-                'Confidence': row['Confidence'],
-                'Alt_1_Network': row['Alt_1_Network'],
-                'Gordon2017_max_dice': gordon_dice,
-                'Gordon2017_p_value': gordon_p,
-                'Gordon2017_best_network': gordon_net,
-                'Yeo2011_max_dice': yeo_dice,
-                'Yeo2011_p_value': yeo_p,
-                'Yeo2011_best_network': yeo_net,
-                'NCT_status': 'Complete'
-            })
-            
+
+            results.append(result_row)
+
         else:
             print(f"  ✗ NCT analysis failed")
             print(result.stdout)
             print(result.stderr)
-            
+
             results.append({
                 'Subject': subj,
                 'Community': comm,
@@ -150,15 +141,9 @@ except Exception as e:
                 'Spatial_Score': row['Spatial_Score'],
                 'Confidence': row['Confidence'],
                 'Alt_1_Network': row['Alt_1_Network'],
-                'Gordon2017_max_dice': 'NA',
-                'Gordon2017_p_value': 'NA',
-                'Gordon2017_best_network': 'NA',
-                'Yeo2011_max_dice': 'NA',
-                'Yeo2011_p_value': 'NA',
-                'Yeo2011_best_network': 'NA',
-                'NCT_status': f'Error'
+                'NCT_status': 'Error'
             })
-    
+
     except subprocess.TimeoutExpired:
         print(f"  ✗ NCT analysis timed out")
         results.append({
@@ -169,15 +154,9 @@ except Exception as e:
             'Spatial_Score': row['Spatial_Score'],
             'Confidence': row['Confidence'],
             'Alt_1_Network': row['Alt_1_Network'],
-            'Gordon2017_max_dice': 'NA',
-            'Gordon2017_p_value': 'NA',
-            'Gordon2017_best_network': 'NA',
-            'Yeo2011_max_dice': 'NA',
-            'Yeo2011_p_value': 'NA',
-            'Yeo2011_best_network': 'NA',
             'NCT_status': 'Timeout'
         })
-    
+
     except Exception as e:
         print(f"  ✗ Error: {e}")
         results.append({
@@ -188,15 +167,9 @@ except Exception as e:
             'Spatial_Score': row['Spatial_Score'],
             'Confidence': row['Confidence'],
             'Alt_1_Network': row['Alt_1_Network'],
-            'Gordon2017_max_dice': 'NA',
-            'Gordon2017_p_value': 'NA',
-            'Gordon2017_best_network': 'NA',
-            'Yeo2011_max_dice': 'NA',
-            'Yeo2011_p_value': 'NA',
-            'Yeo2011_best_network': 'NA',
             'NCT_status': f'Error: {str(e)}'
         })
-    
+
     # Save intermediate results every 10 communities
     if len(results) % 10 == 0:
         temp_df = pd.DataFrame(results)
@@ -206,7 +179,7 @@ except Exception as e:
 if results:
     results_df = pd.DataFrame(results)
     results_df.to_csv(OUTPUT_CSV, index=False)
-    
+
     print("\n" + "="*60)
     print("NCT Analysis Complete!")
     print(f"Total communities analyzed: {len(results)}")
