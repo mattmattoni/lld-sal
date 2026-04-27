@@ -3,6 +3,8 @@
 DATA_DIR="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp"
 DATALIST="/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/data_check.txt"
 
+rm -f "$DATALIST"
+
 echo "subject,fsaverage_LR32k,rest-1,rest-2,msit" > $DATALIST
 
 for subj in $DATA_DIR/*; do
@@ -25,6 +27,8 @@ echo "Results written to $DATALIST"
 #Generate sublist
 
 SUBLIST=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist_include.txt
+
+rm -f "$SUBLIST"
 
 tail -n +2 "$DATALIST" | while IFS=',' read -r subj fs r1 r2 msit; do
     
