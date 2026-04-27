@@ -33,18 +33,32 @@ ConcatenatedData = [];
 for i = 1:nSessions
     
     % count the number of runs in this session
-    nRuns = length(dir([Subdir '/MNINonLinear/Results/rest*']));
+    restRuns = dir([Subdir '/MNINonLinear/Results/rest*']);
+    taskRuns = dir([Subdir '/MNINonLinear/Results/task*']);
+
+    allRuns = [restRuns; taskRuns];
+
+    nRuns = length(allRuns);
     
     % sweep through the runs;
-    for ii = 1:nRuns
-        
-        % load the denoised & fs_lr_32k surface-registered CIFTI file for run "ii" from session "i"...
-        Cifti = ft_read_cifti_mod([Subdir '/MNINonLinear/Results/rest-' num2str(ii) '/rest-' num2str(ii) '_Atlas_s0.dtseries.nii']);
-        Cifti.data = Cifti.data - mean(Cifti.data,2); % demean
-        ConcatenatedData = [ConcatenatedData Cifti.data];
+        for ii = 1:nRuns
 
-    end
-    
+            runPath = fullfile(allRuns(ii).folder, allRuns(ii).name);
+
+            % pick the dtseries file inside each run folder
+            dtseriesFile = dir(fullfile(runPath, '*_Atlas_s6.dtseries.nii'));
+
+            if isempty(dtseriesFile)
+                continue
+            end
+
+            Cifti = ft_read_cifti_mod(fullfile(dtseriesFile(1).folder, dtseriesFile(1).name));
+
+            Cifti.data = Cifti.data - mean(Cifti.data, 2);
+
+            ConcatenatedData = [ConcatenatedData Cifti.data];
+
+        end
 end
 
 % make a single CIFTI containing time-series from all scans;
@@ -66,14 +80,14 @@ pfm_make_dmat(ConcatenatedCifti,MidthickSurfs,PfmDir,nWorkers,WorkbenchBinary); 
 [ConcatenatedCifti] = pfm_regress_adjacent_cortex(ConcatenatedCifti,[PfmDir '/DistanceMatrix.mat'],20);
 
 % write out the CIFTI file;
-ft_write_cifti_mod([PfmDir 'sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti);
+ft_write_cifti_mod([PfmDir 'sub-' Subject '_concatenated_32k_fsLR.dtseries.nii'],ConcatenatedCifti);
 
 %% Step 3: Smoothing (Done in ciftify)
 
 %% Step 4: Run infomap.
 
 % load your concatenated resting-state dataset, pick whatever level of spatial smoothing you want
-ConcatenatedCifti = ft_read_cifti_mod([PfmDir 'sub-' Subject '_task-rest_concatenated_32k_fsLR.dtseries.nii']);
+ConcatenatedCifti = ft_read_cifti_mod([PfmDir 'sub-' Subject '_concatenated_32k_fsLR.dtseries.nii']);
 
 % define inputs;
 DistanceMatrix = [PfmDir 'DistanceMatrix.mat'];
@@ -81,7 +95,7 @@ DistanceCutoff = 10;
 GraphDensities = 0.0001;
 NumberReps = 50;
 BadVertices = [];
-Structures = {'CORTEX_LEFT','CEREBELLUM_LEFT','ACCUMBENS_LEFT','CAUDATE_LEFT','PALLIDUM_LEFT','PUTAMEN_LEFT','THALAMUS_LEFT','HIPPOCAMPUS_LEFT','AMYGDALA_LEFT','ACCUMBENS_LEFT','CORTEX_RIGHT','CEREBELLUM_RIGHT','ACCUMBENS_RIGHT','CAUDATE_RIGHT','PALLIDUM_RIGHT','PUTAMEN_RIGHT','THALAMUS_RIGHT','HIPPOCAMPUS_RIGHT','AMYGDALA_RIGHT','ACCUMBENS_RIGHT'};
+Structures = {'CORTEX_LEFT','CEREBELLUM_LEFT','ACCUMBENS_LEFT','CAUDATE_LEFT','PALLIDUM_LEFT','PUTAMEN_LEFT','THALAMUS_LEFT','HIPPOCAMPUS_LEFT','AMYGDALA_LEFT','CORTEX_RIGHT','CEREBELLUM_RIGHT','ACCUMBENS_RIGHT','CAUDATE_RIGHT','PALLIDUM_RIGHT','PUTAMEN_RIGHT','THALAMUS_RIGHT','HIPPOCAMPUS_RIGHT','AMYGDALA_RIGHT'};
 
 % run infomap
 pfm_infomap(ConcatenatedCifti,DistanceMatrix,PfmDir,GraphDensities,NumberReps,DistanceCutoff,BadVertices,Structures,nWorkers,InfoMapBinary);
