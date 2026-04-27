@@ -32,12 +32,21 @@ process_subject() {
 
 export -f process_subject
 
-SUBJECT_LIST=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist.txt
-START_LINE=1
-END_LINE=33
+SUBJECT_LIST=/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist_include.txt
+
+START_LINE=${1}
+END_LINE=${2}
+
+if [ -z "$START_LINE" ] || [ -z "$END_LINE" ]; then
+    echo "ERROR: provide START_LINE and END_LINE"
+    exit 1
+fi
 
 echo "Processing subjects $START_LINE-$END_LINE from subject list"
 
-sed -n "${START_LINE},${END_LINE}p" $SUBJECT_LIST | parallel --jobs 2 --line-buffer --joblog /home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/pfm_parallel_joblog_${SLURM_JOB_ID}.txt 'process_subject {}'
+sed -n "${START_LINE},${END_LINE}p" "$SUBJECT_LIST" | \
+parallel --jobs 2 --line-buffer \
+--joblog /home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/pfm_parallel_joblog_${SLURM_JOB_ID}.txt \
+'process_subject {}'
 
 echo "All subjects completed!"

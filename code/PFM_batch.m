@@ -18,7 +18,6 @@ nWorkers = 5;
 % define subject directory and name;
 Subdir = ['/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/' Subject];
 
-
 % define & create the pfm directory;
 PfmDir = ['/scratch/network/mattonim/pfm_output/' Subject '/pfm/'];
 mkdir(PfmDir);
