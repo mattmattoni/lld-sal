@@ -27,7 +27,7 @@ for SITE in "${SITES[@]}"; do
 
     fmri_process_subject() {
         SUBJECT_ID=$1
-        FUNC_NIFTI=$(ls $FMRI_SITE/$SUBJECT_ID/PREPROC/*.nii.gz 2>/dev/null | head -n 1)
+        FUNC_NIFTI=$FMRI_SITE/$SUBJECT_ID/PREPROC/wmtFMRI_spm_res_bpf.nii.gz
         FULL_PATH=$PROJECT_DIR/$FUNC_NIFTI
         if [ -z "$FUNC_NIFTI" ] || [ ! -f "$FULL_PATH" ]; then
             echo "Missing NIFTI for $SUBJECT_ID"
