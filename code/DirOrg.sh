@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
-SITES=(VUMC UPMC)
+SITES=(VUMC UPMC UIC)
 
 for SITE in "${SITES[@]}"; do
 
@@ -51,15 +51,25 @@ for SITE in "${SITES[@]}"; do
   #  mv "$dir" "$cleandir"
   #done
 
-    # Clean Sub IDs in REST1
+  #Clean task
   cd "$TASK_DIR"
   for dir in REMBRANDT-x-*; do
+
     if [ "$SITE" = "UIC" ]; then
       cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
     else
       cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
     fi
-    mv "$dir" "$cleandir"
-  done
 
+    nested="$dir/$dir/out/PREPROC"
+
+    if [ -d "$nested" ]; then
+      mkdir -p "$cleandir"
+      mv "$nested" "$cleandir/"
+      rm -rf "$dir"
+    else
+      echo "Skipping $dir (no PREPROC found)"
+    fi
+
+  done
 done

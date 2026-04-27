@@ -67,11 +67,11 @@ for idx, subj in enumerate(all_subjects, 1):
         confidence = row['Confidence']
         
         # Only process uncertain communities
-        if confidence >= CONFIDENCE_THRESHOLD:
-            print(f"  Skipping confident community {community} (Confidence: {confidence:.3f})")
-            continue
+        #if confidence >= CONFIDENCE_THRESHOLD:
+        #    print(f"  Skipping confident community {community} (Confidence: {confidence:.3f})")
+        #    continue
         
-        print(f"  Processing UNCERTAIN community {community} (Confidence: {confidence:.3f})...")
+        print(f"  Processing community {community} (Confidence: {confidence:.3f})...")
         
         # Extract community to temp dscalar
         temp_dscalar = os.path.join(subj_nct_dir, f"temp_community_{community}.dscalar.nii")
