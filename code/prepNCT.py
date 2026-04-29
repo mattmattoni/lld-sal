@@ -197,7 +197,7 @@ if results:
     print("Preparation complete!")
     print(f"Output CSV: {OUTPUT_CSV}")
     print(f"NCT input files: {NCT_INPUT_DIR}")
-    print(f"\nTotal uncertain communities extracted: {len(results)}")
+    print(f"\nTotal communities extracted: {len(results)}")
     print("="*60)
 else:
-    print("\nNo uncertain communities found!")
+    print("\nNo communities found!")
