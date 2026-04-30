@@ -18,8 +18,7 @@ SUBLIST="/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist_in
 mkdir -p ${OUTPUT_DIR}
 
 # Read subjects from file
-SUBJECTS=($(cat ${SUBLIST} | tr -d '\n' | grep -o '[0-9]\{6\}'))
-
+SUBJECTS=($(cat ${SUBLIST}))
 echo "Found ${#SUBJECTS[@]} subjects"
 
 # File patterns to average
