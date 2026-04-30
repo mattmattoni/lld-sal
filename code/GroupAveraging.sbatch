@@ -11,24 +11,9 @@ export PATH=/home/mattonim/workbench/bin_linux64:$PATH
 
 BASE_DIR="/scratch/network/mattonim/pfm_output"
 OUTPUT_DIR="/scratch/network/mattonim/pfm_output/group_average"
-SUBLIST="/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist_include.txt"
 
 mkdir -p ${OUTPUT_DIR}
-SUBJECTS=($(cat ${SUBLIST}))
 
-# Convert each subject's dlabel to dscalar (one map per label)
-echo "Converting labels to scalar maps..."
-for sub in "${SUBJECTS[@]}"; do
-    LABEL="${BASE_DIR}/${sub}/pfm/Bipartite_PhysicalCommunities+AlgorithmicLabeling.dlabel.nii"
-    
-    if [ -f "$LABEL" ]; then
-        wb_command -cifti-label-to-border \
-            ${LABEL} \
-            ${OUTPUT_DIR}/temp_${sub}_label.dscalar.nii
-    fi
-done
-
-# Use Python to find mode label at each vertex
 python3 << 'EOF'
 import numpy as np
 import nibabel as nib
@@ -37,7 +22,8 @@ import glob
 
 label_files = sorted(glob.glob('/scratch/network/mattonim/pfm_output/*/pfm/Bipartite_PhysicalCommunities+AlgorithmicLabeling.dlabel.nii'))
 
-# Load all label maps
+print(f"Found {len(label_files)} subjects")
+
 all_labels = []
 ref_img = None
 
@@ -45,17 +31,19 @@ for f in label_files:
     img = nib.load(f)
     if ref_img is None:
         ref_img = img
-    data = img.get_fdata().squeeze()
+    data = img.get_fdata().squeeze().astype(int)
     all_labels.append(data)
 
-# Stack and find mode
 all_labels = np.array(all_labels)
+print(f"Label array shape: {all_labels.shape}")
+
 mode_labels, _ = stats.mode(all_labels, axis=0, keepdims=False)
 
-# Create output using reference structure
 out_data = mode_labels.reshape(1, -1)
 new_img = nib.Cifti2Image(out_data, header=ref_img.header)
 new_img.to_filename('/scratch/network/mattonim/pfm_output/group_average/group_mode_network_labels.dlabel.nii')
 
-print("Group mode network map created")
+print("Saved: group_mode_network_labels.dlabel.nii")
 EOF
+
+echo "Complete"
