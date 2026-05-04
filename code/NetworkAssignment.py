@@ -207,7 +207,7 @@ class NCTValidator:
 
 def main():
     nct_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/salience_communities_NCT_results.csv'
-    communities_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivativessalience_communities.csv'
+    communities_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/salience_communities.csv'
     output_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validated_assignments.csv'
     summary_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validation_summary.txt'
     
