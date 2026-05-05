@@ -87,7 +87,7 @@ def update_network_labels():
                 
                 print(f"\n  Subject {subject_str}: Updated {changes_applied} communities")
             else:
-                # No changes for this subject, but still create the file
+                # No changes for this subject
                 print(f"\n  Subject {subject_str}: No changes")
             
             # Save updated file with new name (for ALL subjects)
@@ -97,6 +97,9 @@ def update_network_labels():
                 'pfm',
                 'Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels+ManualDecisions.xls'
             )
+            
+            # Fill NaN values in Network_ManualDecision with empty strings for MATLAB compatibility
+            network_labels_df['Network_ManualDecision'] = network_labels_df['Network_ManualDecision'].fillna('')
             
             network_labels_df.to_excel(output_path, index=False)
             updated_files += 1
