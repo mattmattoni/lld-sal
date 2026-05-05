@@ -14,7 +14,7 @@ def update_network_labels():
     pfm_base = '/scratch/network/mattonim/pfm_output'
     
     print("UPDATING NETWORK LABELS WITH MANUAL DECISIONS")
-
+    
     # Load validation results
     print(f"\nLoading validation results...")
     validated_df = pd.read_csv(validated_file)
@@ -98,7 +98,7 @@ def update_network_labels():
                 'Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels+ManualDecisions.xls'
             )
             
-            network_labels_df.to_excel(output_path, index=False)
+            network_labels_df.to_excel(output_path, index=False, engine='openpyxl')
             updated_files += 1
             
         except Exception as e:
@@ -107,7 +107,7 @@ def update_network_labels():
             print(f"\n  {error_msg}")
     
     # Summary
-    print("SUMMARY")
+    print("\nSUMMARY")
     print(f"Files successfully updated: {updated_files}")
     print(f"Errors encountered: {len(errors)}")
     
@@ -115,6 +115,9 @@ def update_network_labels():
         print("\nErrors:")
         for error in errors:
             print(f"  - {error}")
+    
+    print("\nDone!")
+
 
 if __name__ == "__main__":
     update_network_labels()
