@@ -19,13 +19,10 @@ end
 uCi = unique(nonzeros(Ic.data));
 
 % read in the labels;
-Labels = readtable(XLS);
-disp('=== DEBUG INFO ===');
-disp(['Network_ManualDecision class: ' class(Labels.Network_ManualDecision)]);
-disp(['Network class: ' class(Labels.Network)]);
-disp('First 5 values of Network_ManualDecision:');
-disp(Labels.Network_ManualDecision(1:5));
-error('STOPPING HERE FOR DEBUG');
+% Force Network_ManualDecision to be read as text
+opts = detectImportOptions(XLS);
+opts = setvartype(opts, 'Network_ManualDecision', 'char');
+Labels = readtable(XLS, opts);
 
 O = Ic; % preallocate output
 O.data = zeros(size(Ic.data));
