@@ -1,6 +1,7 @@
 #!/bin/bash
 
 OUTPUT="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/NetworkSizes.csv"
+OUTPUT_ADJUSTED="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/NetworkSizes_adjusted.csv"
 BASE_DIR="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt"
 PFM_DIR="/scratch/network/mattonim/pfm_output"
 
@@ -39,67 +40,104 @@ done
 # Get unique subjects and sort them numerically
 unique_subjects=($(printf '%s\n' "${subjects[@]}" | sort -u | sort -n))
 
-# First pass: collect all unique network names across all subjects
+# First pass: collect all unique network names across all subjects (from both original and adjusted)
 declare -A all_networks
 
 for SUBJ_ID in "${unique_subjects[@]}"; do
     PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm/FunctionalNetworkSizes.txt"
+    PFM_FILE_ADJ="$PFM_DIR/$SUBJ_ID/pfm/FunctionalNetworkSizes_adjusted.txt"
     
+    # Read from original file
     if [ -f "$PFM_FILE" ]; then
-        # Read network names from the file (skip header)
         while IFS=$'\t' read -r network value; do
             if [ "$network" != "Network" ]; then
                 all_networks["$network"]=1
             fi
         done < "$PFM_FILE"
     fi
+    
+    # Read from adjusted file
+    if [ -f "$PFM_FILE_ADJ" ]; then
+        while IFS=$'\t' read -r network value; do
+            if [ "$network" != "Network" ]; then
+                all_networks["$network"]=1
+            fi
+        done < "$PFM_FILE_ADJ"
+    fi
 done
 
 # Convert to sorted array
 networks=($(printf '%s\n' "${!all_networks[@]}" | sort))
 
-# Write header
+# Write headers for both files
 header="sub"
 for network in "${networks[@]}"; do
     header="${header},${network}"
 done
 echo "$header" > $OUTPUT
+echo "$header" > $OUTPUT_ADJUSTED
 
 # Process each unique subject
 for SUBJ_ID in "${unique_subjects[@]}"; do
     PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm/FunctionalNetworkSizes.txt"
+    PFM_FILE_ADJ="$PFM_DIR/$SUBJ_ID/pfm/FunctionalNetworkSizes_adjusted.txt"
     
-    row="$SUBJ_ID"
+    row_orig="$SUBJ_ID"
+    row_adj="$SUBJ_ID"
     
+    # Process original file
     if [ -f "$PFM_FILE" ]; then
-        # Create associative array for this subject's networks
         declare -A subject_networks
         
-        # Read the file and store values
         while IFS=$'\t' read -r network value; do
             if [ "$network" != "Network" ]; then
                 subject_networks["$network"]="$value"
             fi
         done < "$PFM_FILE"
         
-        # For each network in our master list, get the value or NA
         for network in "${networks[@]}"; do
             if [ -n "${subject_networks[$network]}" ]; then
-                row="${row},${subject_networks[$network]}"
+                row_orig="${row_orig},${subject_networks[$network]}"
             else
-                row="${row},NA"
+                row_orig="${row_orig},NA"
             fi
         done
         
         unset subject_networks
     else
-        # File doesn't exist, fill all network columns with NA
         for network in "${networks[@]}"; do
-            row="${row},NA"
+            row_orig="${row_orig},NA"
         done
     fi
     
-    echo "$row" >> $OUTPUT
+    # Process adjusted file
+    if [ -f "$PFM_FILE_ADJ" ]; then
+        declare -A subject_networks_adj
+        
+        while IFS=$'\t' read -r network value; do
+            if [ "$network" != "Network" ]; then
+                subject_networks_adj["$network"]="$value"
+            fi
+        done < "$PFM_FILE_ADJ"
+        
+        for network in "${networks[@]}"; do
+            if [ -n "${subject_networks_adj[$network]}" ]; then
+                row_adj="${row_adj},${subject_networks_adj[$network]}"
+            else
+                row_adj="${row_adj},NA"
+            fi
+        done
+        
+        unset subject_networks_adj
+    else
+        for network in "${networks[@]}"; do
+            row_adj="${row_adj},NA"
+        done
+    fi
+    
+    echo "$row_orig" >> $OUTPUT
+    echo "$row_adj" >> $OUTPUT_ADJUSTED
 done
 
-echo "Results written to $OUTPUT"
+echo "Original network sizes written to $OUTPUT"
+echo "Adjusted network sizes written to $OUTPUT_ADJUSTED"
