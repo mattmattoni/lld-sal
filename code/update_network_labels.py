@@ -98,7 +98,7 @@ def update_network_labels():
                 'Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels+ManualDecisions.xls'
             )
             
-            network_labels_df.to_excel(output_path, index=False, engine='openpyxl')
+            network_labels_df.to_excel(output_path, index=False)
             updated_files += 1
             
         except Exception as e:
