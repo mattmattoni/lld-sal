@@ -128,19 +128,19 @@ class NCTValidator:
             metadata['lowest_p_network'], metadata['lowest_p_value'] = self.find_lowest_p_network(eg17_networks)
             return primary_network, 'Rule 0: Confidence > 0.40', metadata
         
-        if (pd.notna(primary_fc) and primary_fc > self.fc_threshold_1 and
+        if (pd.notna(primary_fc) and primary_fc >= self.fc_threshold_1 and
             pd.notna(primary_p) and primary_p < self.p_threshold):
             metadata['lowest_p_network'], metadata['lowest_p_value'] = self.find_lowest_p_network(eg17_networks)
-            return primary_network, 'Rule 1: Primary FC > 0.10 AND p < 0.05', metadata
+            return primary_network, 'Rule 1: Primary FC >= 0.10 AND p < 0.05', metadata
         
-        if pd.notna(primary_fc) and primary_fc > self.fc_threshold_2:
+        if pd.notna(primary_fc) and primary_fc >= self.fc_threshold_2:
             metadata['lowest_p_network'], metadata['lowest_p_value'] = self.find_lowest_p_network(eg17_networks)
-            return primary_network, 'Rule 2: Primary FC > 0.15', metadata
+            return primary_network, 'Rule 2: Primary FC >= 0.15', metadata
         
-        if (pd.notna(secondary_fc) and secondary_fc > self.fc_threshold_3 and
+        if (pd.notna(secondary_fc) and secondary_fc >= self.fc_threshold_3 and
             pd.notna(secondary_p) and secondary_p < self.p_threshold):
             metadata['lowest_p_network'], metadata['lowest_p_value'] = self.find_lowest_p_network(eg17_networks)
-            return secondary_network, 'Rule 3: Secondary FC > 0.10 AND p < 0.05', metadata
+            return secondary_network, 'Rule 3: Secondary FC >= 0.10 AND p < 0.05', metadata
         
         if pd.notna(primary_p) and primary_p < self.p_threshold:
             metadata['lowest_p_network'], metadata['lowest_p_value'] = self.find_lowest_p_network(eg17_networks)
@@ -150,14 +150,22 @@ class NCTValidator:
             metadata['lowest_p_network'], metadata['lowest_p_value'] = self.find_lowest_p_network(eg17_networks)
             return secondary_network, 'Rule 5: Secondary p < 0.05', metadata
         
+        if pd.notna(primary_fc) and primary_fc >= self.fc_threshold_1:
+            metadata['lowest_p_network'], metadata['lowest_p_value'] = self.find_lowest_p_network(eg17_networks)
+            return primary_network, 'Rule 6: Primary FC >= 0.10', metadata
+        
+        if pd.notna(secondary_fc) and secondary_fc >= self.fc_threshold_3:
+            metadata['lowest_p_network'], metadata['lowest_p_value'] = self.find_lowest_p_network(eg17_networks)
+            return secondary_network, 'Rule 7: Secondary FC >= 0.10', metadata
+        
         lowest_p_net, lowest_p = self.find_lowest_p_network(eg17_networks)
         metadata['lowest_p_network'] = lowest_p_net
         metadata['lowest_p_value'] = lowest_p
         
         if lowest_p_net is not None and pd.notna(lowest_p) and lowest_p < self.p_threshold:
-            return lowest_p_net, 'Rule 6: Lowest EG17 p-value', metadata
+            return lowest_p_net, 'Rule 8: Lowest EG17 p-value', metadata
         
-        return primary_network, 'Rule 7: Keep original (fallback)', metadata
+        return primary_network, 'Rule 9: Keep original (fallback)', metadata
     
     def validate_batch(self, df: pd.DataFrame) -> pd.DataFrame:
         results = []
