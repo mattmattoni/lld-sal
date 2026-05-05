@@ -27,7 +27,7 @@ MidthickSurfs{2} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.R.midthick
 Ic = ft_read_cifti_mod([PfmDir '/Bipartite_PhysicalCommunities+SpatialFiltering.dtseries.nii']);
 
 % define inputs for manual decisions
-XLS = [PfmDir '/Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels+ManualDecisions.xls'];
+XLS = [PfmDir '/Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels+ManualDecisions.csv'];
 Output = 'Bipartite_PhysicalCommunities+AlgorithmicLabeling_adjusted';
 Column = 1;
 

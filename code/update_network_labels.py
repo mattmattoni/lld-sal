@@ -95,13 +95,13 @@ def update_network_labels():
                 pfm_base,
                 subject_str,
                 'pfm',
-                'Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels+ManualDecisions.xls'
+                'Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels+ManualDecisions.csv'
             )
             
             # Fill NaN values in Network_ManualDecision with empty strings for MATLAB compatibility
             network_labels_df['Network_ManualDecision'] = network_labels_df['Network_ManualDecision'].fillna('')
             
-            network_labels_df.to_excel(output_path, index=False)
+            network_labels_df.to_csv(output_path, index=False)
             updated_files += 1
             
         except Exception as e:
