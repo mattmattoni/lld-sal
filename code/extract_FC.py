@@ -54,7 +54,8 @@ def extract_roi(ts_data, parc_labels, parcel_dict):
 
 def extract_networks(ts_data, net_labels, labels_cifti):
     # Get label table from dlabel file
-    label_table = labels_cifti.header.get_index_map(0).named_maps[0].label_table
+    named_maps = list(labels_cifti.header.get_index_map(0).named_maps)
+    label_table = named_maps[0].label_table
     
     # Build network ID to name mapping
     net_id_to_name = {}
