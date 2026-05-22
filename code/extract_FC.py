@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Batch PFM connectivity extraction - all in one."""
 
 import os
 import nibabel as nib
@@ -152,7 +151,6 @@ def save_results(output_dir, subject_id, comp_fc, comp_names, net_fc, net_names,
 
 
 def process_subject(subject_id):
-    subject_id = subject_id if subject_id.startswith('sub-') else f'sub-{subject_id}'
     pfm_dir = os.path.join(PFM_BASE_DIR, subject_id, 'pfm')
     parc_file = PARCELLATION_PATH.replace('SUBJECT', subject_id)
     
@@ -162,7 +160,7 @@ def process_subject(subject_id):
         return False, "Parcellation not found"
     
     try:
-        data = load_data(pfm_dir, subject_id.replace('sub-', ''), parc_file)
+        data = load_data(pfm_dir, subject_id, parc_file)
         
         structures = extract_structures(data['ts_cifti'], data['ts_data'])
         acc = extract_roi(data['ts_data'], data['parc_labels'], DK_ACC)
@@ -180,7 +178,7 @@ def process_subject(subject_id):
         
         output_dir = os.path.join(OUTPUT_BASE_DIR, subject_id, 'connectivity_analysis') if OUTPUT_BASE_DIR else os.path.join(pfm_dir, '../connectivity_analysis')
         
-        save_results(output_dir, subject_id, comp_fc, comp_names, net_fc, net_names, NO_PLOTS)
+        save_results(output_dir, f'sub-{subject_id}', comp_fc, comp_names, net_fc, net_names, NO_PLOTS)
         
         return True, "Success"
     except Exception as e:
