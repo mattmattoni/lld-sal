@@ -13,7 +13,7 @@ from datetime import datetime
 SUBJECT_LIST = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist_include.txt'
 PFM_BASE_DIR = '/scratch/network/mattonim/pfm_output'
 PARCELLATION_PATH = '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/SUBJECT/MNINonLinear/fsaverage_LR32k/SUBJECT.aparc.32k_fs_LR.dlabel.nii'
-OUTPUT_BASE_DIR = None
+OUTPUT_BASE_DIR = '/scratch/network/mattonim/pfm_output/connectivity_results'
 NO_PLOTS = False
 
 # Desikan-Killiany parcel IDs
@@ -176,7 +176,7 @@ def process_subject(subject_id):
         comp_fc, comp_names = compute_fc(structures, networks)
         net_fc, net_names = compute_net_fc(networks, data['net_fc'])
         
-        output_dir = os.path.join(OUTPUT_BASE_DIR, subject_id, 'connectivity_analysis') if OUTPUT_BASE_DIR else os.path.join(pfm_dir, '../connectivity_analysis')
+        output_dir = OUTPUT_BASE_DIR if OUTPUT_BASE_DIR else os.path.join(pfm_dir, '../connectivity_analysis')
         
         save_results(output_dir, f'sub-{subject_id}', comp_fc, comp_names, net_fc, net_names, NO_PLOTS)
         
