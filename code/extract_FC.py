@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
 
-# Edit these paths
 SUBJECT_LIST = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist_include.txt'
 PFM_BASE_DIR = '/scratch/network/mattonim/pfm_output'
 PARCELLATION_PATH = '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/SUBJECT/MNINonLinear/fsaverage_LR32k/SUBJECT.aparc.32k_fs_LR.dlabel.nii'
@@ -29,13 +28,8 @@ def load_data(pfm_dir, subject_id, parc_file):
     data['ts_data'] = data['ts_cifti'].get_fdata()
     
     label_file = os.path.join(pfm_dir, 'Bipartite_PhysicalCommunities+AlgorithmicLabeling_adjusted.dlabel.nii')
-    data['network_labels'] = nib.load(label_file).get_fdata()[0, :]
-    
-    net_fc = os.path.join(pfm_dir, 'Bipartite_PhysicalCommunities+AlgorithmicLabeling_FC_btwn_InfoMapCommunities.dtseries.nii')
-    data['net_fc'] = nib.load(net_fc).get_fdata() if os.path.exists(net_fc) else None
-    
-    csv_file = os.path.join(pfm_dir, 'Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels+ManualDecisions.csv')
-    data['net_names'] = pd.read_csv(csv_file) if os.path.exists(csv_file) else None
+    data['labels_cifti'] = nib.load(label_file)
+    data['network_labels'] = data['labels_cifti'].get_fdata()[0, :]
     
     data['parc_labels'] = nib.load(parc_file).get_fdata()[0, :]
     return data
@@ -58,39 +52,26 @@ def extract_roi(ts_data, parc_labels, parcel_dict):
     return {'ts': np.mean(ts_data[:, mask], axis=1)} if np.sum(mask) > 0 else None
 
 
-def extract_networks(ts_data, net_labels, net_names_df):
-    # Build community ID to network name mapping
-    comm_to_network = {}
-    if net_names_df is not None:
-        for _, row in net_names_df.iterrows():
-            comm_id = int(row.iloc[0])
-            manual = row.iloc[2] if len(row) > 2 else None
-            auto = row.iloc[1] if len(row) > 1 else None
-            
-            if manual and pd.notna(manual) and str(manual).strip():
-                network_name = str(manual).strip()
-            elif auto and pd.notna(auto):
-                network_name = str(auto).strip()
-            else:
-                network_name = f"Network_{comm_id}"
-            
-            comm_to_network[comm_id] = network_name
+def extract_networks(ts_data, net_labels, labels_cifti):
+    # Get label table from dlabel file
+    label_table = labels_cifti.header.get_index_map(0).named_maps[0].label_table
     
-    # Group communities by network name
-    network_masks = {}
-    for comm_id in np.unique(net_labels[net_labels > 0]):
-        comm_id = int(comm_id)
-        network_name = comm_to_network.get(comm_id, f"Network_{comm_id}")
-        
-        comm_mask = net_labels == comm_id
-        if network_name in network_masks:
-            network_masks[network_name] |= comm_mask
-        else:
-            network_masks[network_name] = comm_mask
+    # Build network ID to name mapping
+    net_id_to_name = {}
+    for key in label_table.keys():
+        if key > 0:  # Skip 0 (background/unknown)
+            net_id_to_name[int(key)] = label_table[key].label
     
-    # Compute mean timeseries per network
+    # Extract timeseries for each network
     networks = {}
-    for network_name, mask in network_masks.items():
+    for net_id in np.unique(net_labels[net_labels > 0]):
+        net_id = int(net_id)
+        network_name = net_id_to_name.get(net_id, f"Network_{net_id}")
+        
+        if network_name == "Noise":
+            continue
+        
+        mask = net_labels == net_id
         ts = np.mean(ts_data[:, mask], axis=1)
         networks[network_name] = {'ts': ts}
     
@@ -118,7 +99,7 @@ def compute_fc(rois, networks):
     return fc, names
 
 
-def compute_net_fc(networks, precomputed):
+def compute_net_fc(networks):
     names = sorted(networks.keys())
     n = len(names)
     
@@ -184,10 +165,10 @@ def process_subject(subject_id):
         if insula:
             structures['insula'] = insula
         
-        networks = extract_networks(data['ts_data'], data['network_labels'], data['net_names'])
+        networks = extract_networks(data['ts_data'], data['network_labels'], data['labels_cifti'])
         
         comp_fc, comp_names = compute_fc(structures, networks)
-        net_fc, net_names = compute_net_fc(networks, data['net_fc'])
+        net_fc, net_names = compute_net_fc(networks)
         
         output_dir = OUTPUT_BASE_DIR if OUTPUT_BASE_DIR else os.path.join(pfm_dir, '../connectivity_analysis')
         
