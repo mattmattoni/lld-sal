@@ -59,23 +59,41 @@ def extract_roi(ts_data, parc_labels, parcel_dict):
 
 
 def extract_networks(ts_data, net_labels, net_names_df):
+    # Build community ID to network name mapping
+    comm_to_network = {}
+    if net_names_df is not None:
+        for _, row in net_names_df.iterrows():
+            comm_id = int(row.iloc[0])
+            manual = row.iloc[2] if len(row) > 2 else None
+            auto = row.iloc[1] if len(row) > 1 else None
+            
+            if manual and pd.notna(manual) and str(manual).strip():
+                network_name = str(manual).strip()
+            elif auto and pd.notna(auto):
+                network_name = str(auto).strip()
+            else:
+                network_name = f"Network_{comm_id}"
+            
+            comm_to_network[comm_id] = network_name
+    
+    # Group communities by network name
+    network_masks = {}
+    for comm_id in np.unique(net_labels[net_labels > 0]):
+        comm_id = int(comm_id)
+        network_name = comm_to_network.get(comm_id, f"Network_{comm_id}")
+        
+        comm_mask = net_labels == comm_id
+        if network_name in network_masks:
+            network_masks[network_name] |= comm_mask
+        else:
+            network_masks[network_name] = comm_mask
+    
+    # Compute mean timeseries per network
     networks = {}
-    for net_id in np.unique(net_labels[net_labels > 0]):
-        mask = net_labels == net_id
+    for network_name, mask in network_masks.items():
         ts = np.mean(ts_data[:, mask], axis=1)
-        
-        name = f"Network_{int(net_id)}"
-        if net_names_df is not None:
-            rows = net_names_df[net_names_df.iloc[:, 0] == net_id]
-            if len(rows) > 0:
-                auto = rows.iloc[0, 1] if len(rows.columns) > 1 else None
-                manual = rows.iloc[0, 2] if len(rows.columns) > 2 else None
-                if manual and pd.notna(manual) and str(manual).strip():
-                    name = str(manual).strip()
-                elif auto and pd.notna(auto):
-                    name = str(auto).strip()
-        
-        networks[int(net_id)] = {'name': name, 'ts': ts}
+        networks[network_name] = {'ts': ts}
+    
     return networks
 
 
@@ -87,9 +105,9 @@ def compute_fc(rois, networks):
         names.append(name)
         timeseries.append(rois[name]['ts'])
     
-    for net_id in sorted(networks.keys()):
-        names.append(networks[net_id]['name'])
-        timeseries.append(networks[net_id]['ts'])
+    for network_name in sorted(networks.keys()):
+        names.append(network_name)
+        timeseries.append(networks[network_name]['ts'])
     
     n = len(names)
     fc = np.zeros((n, n))
@@ -101,17 +119,14 @@ def compute_fc(rois, networks):
 
 
 def compute_net_fc(networks, precomputed):
-    net_ids = sorted(networks.keys())
-    names = [networks[nid]['name'] for nid in net_ids]
+    names = sorted(networks.keys())
+    n = len(names)
     
-    if precomputed is not None and precomputed.shape[0] == len(net_ids):
-        return precomputed, names
-    
-    n = len(net_ids)
     fc = np.zeros((n, n))
-    for i, id1 in enumerate(net_ids):
-        for j, id2 in enumerate(net_ids):
-            fc[i, j] = 1.0 if i == j else pearsonr(networks[id1]['ts'], networks[id2]['ts'])[0]
+    for i, name1 in enumerate(names):
+        for j, name2 in enumerate(names):
+            fc[i, j] = 1.0 if i == j else pearsonr(networks[name1]['ts'], networks[name2]['ts'])[0]
+    
     return fc, names
 
 
@@ -120,11 +135,9 @@ def save_results(output_dir, subject_id, comp_fc, comp_names, net_fc, net_names,
     
     comp_file = os.path.join(output_dir, f'{subject_id}_Comprehensive_FC.csv')
     pd.DataFrame(comp_fc, index=comp_names, columns=comp_names).to_csv(comp_file)
-    np.save(comp_file.replace('.csv', '.npy'), comp_fc)
     
     net_file = os.path.join(output_dir, f'{subject_id}_Network-Network_FC.csv')
     pd.DataFrame(net_fc, index=net_names, columns=net_names).to_csv(net_file)
-    np.save(net_file.replace('.csv', '.npy'), net_fc)
     
     if not no_plots:
         sns.set_style("white")
