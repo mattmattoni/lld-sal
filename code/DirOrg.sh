@@ -2,15 +2,15 @@
 
 PROJECT_DIR=/projects/psych_oajilore_chi/mattonim/rembrandt
 SITES=(VUMC UPMC UIC)
-
+  
 for SITE in "${SITES[@]}"; do
 
   #FS_DIR=$PROJECT_DIR/Baseline-FS-$SITE
-  REST1_DIR=$PROJECT_DIR/Baseline-run1-$SITE
-  REST2_DIR=$PROJECT_DIR/Baseline-run2-$SITE
-  TASK_DIR=$PROJECT_DIR/MSIT-Baseline-$SITE
+  REST1_DIR=$PROJECT_DIR/Month08-run1-$SITE
+  REST2_DIR=$PROJECT_DIR/Month08-run2-$SITE
+  TASK_DIR=$PROJECT_DIR/MSIT-Month08-$SITE
 
-  # Remove SUBJ subdir in FS
+  ## Remove SUBJ subdir in FS
   #cd "$FS_DIR"
   #for dir in REMBRANDT-x-*; do
   #  if [ -d "$dir/SUBJ" ]; then
@@ -18,30 +18,8 @@ for SITE in "${SITES[@]}"; do
   #    rmdir "$dir/SUBJ"
   #  fi
   #done
-
-  # Clean Sub IDs in FS
-  #for dir in REMBRANDT-x-*; do
-  #  if [ "$SITE" = "UIC" ]; then
-  #    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
-  #  else
-  #    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
-  #  fi
-  #  mv "$dir" "$cleandir"
-  #done
-
-  ## Clean Sub IDs in REST1
-  #cd "$REST1_DIR"
-  #for dir in REMBRANDT-x-*; do
-  #  if [ "$SITE" = "UIC" ]; then
-  #    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
-  #  else
-  #    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
-  #  fi
-  #  mv "$dir" "$cleandir"
-  #done
 #
-  ## Clean Sub IDs in REST2
-  #cd "$REST2_DIR"
+  ## Clean Sub IDs in FS
   #for dir in REMBRANDT-x-*; do
   #  if [ "$SITE" = "UIC" ]; then
   #    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
@@ -51,6 +29,28 @@ for SITE in "${SITES[@]}"; do
   #  mv "$dir" "$cleandir"
   #done
 
+  # Clean Sub IDs in REST1
+  cd "$REST1_DIR"
+  for dir in REMBRANDT-x-*; do
+    if [ "$SITE" = "UIC" ]; then
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
+    else
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    fi
+    mv "$dir" "$cleandir"
+  done
+
+  # Clean Sub IDs in REST2
+  cd "$REST2_DIR"
+  for dir in REMBRANDT-x-*; do
+    if [ "$SITE" = "UIC" ]; then
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
+    else
+      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+    fi
+    mv "$dir" "$cleandir"
+  done
+  
   #Clean task
   cd "$TASK_DIR"
   for dir in REMBRANDT-x-*; do

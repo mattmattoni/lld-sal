@@ -15,9 +15,9 @@ for subj in $DATA_DIR/*; do
 
     # Check each folder
     [ -d "$subj/MNINonLinear/fsaverage_LR32k" ] && FS="yes" || FS="no"
-    [ -d "$subj/MNINonLinear/Results/rest-1" ] && R1="yes" || R1="no"
-    [ -d "$subj/MNINonLinear/Results/rest-2" ] && R2="yes" || R2="no"
-    [ -d "$subj/MNINonLinear/Results/task-MSIT" ] && MSIT="yes" || MSIT="no"
+    [ -d "$subj/MNINonLinear/Results/month08-rest-1" ] && R1="yes" || R1="no"
+    [ -d "$subj/MNINonLinear/Results/month08-rest-2" ] && R2="yes" || R2="no"
+    [ -d "$subj/MNINonLinear/Results/month08-task-MSIT" ] && MSIT="yes" || MSIT="no"
 
     echo "$SUBJ_ID,$FS,$R1,$R2,$MSIT" >> $DATALIST
 done

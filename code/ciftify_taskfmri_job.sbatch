@@ -19,9 +19,9 @@ SITES=(UIC VUMC UPMC)
 
 for SITE in "${SITES[@]}"; do
 
-    FS_SITE=Baseline-FS-$SITE 
-    FMRI_SITE=MSIT-Baseline-$SITE
-    FUNC_LABEL=task-MSIT
+    FS_SITE=Month08-FS-$SITE 
+    FMRI_SITE=MSIT-Month08-$SITE
+    FUNC_LABEL=month08-task-MSIT
 
     export CIFTIFY_IMG PROJECT_DIR FS_SITE FMRI_SITE FUNC_LABEL
 
