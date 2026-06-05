@@ -32,10 +32,8 @@ ConcatenatedData = [];
 for i = 1:nSessions
     
     % count the number of runs in this session
-    restRuns = dir([Subdir '/MNINonLinear/Results/rest*']);
-    taskRuns = dir([Subdir '/MNINonLinear/Results/task*']);
-
-    allRuns = [restRuns; taskRuns];
+    allRuns = dir([Subdir '/MNINonLinear/Results/month08*']);
+    allRuns = allRuns([allRuns.isdir]);
 
     nRuns = length(allRuns);
     
