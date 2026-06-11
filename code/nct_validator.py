@@ -214,10 +214,10 @@ class NCTValidator:
 
 
 def main():
-    nct_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/salience_communities_NCT_results.csv'
-    communities_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/salience_communities.csv'
-    output_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validated_assignments.csv'
-    summary_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validation_summary.txt'
+    nct_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/salience_communities_NCT_results_month08.csv'
+    communities_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/salience_communities_month08.csv'
+    output_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validated_assignments_month08.csv'
+    summary_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validation_summary_month08.txt'
     
     nct_df = pd.read_csv(nct_file)
     comm_df = pd.read_csv(communities_file)
