@@ -17,7 +17,7 @@ load('priors.mat');
 Subdir = ['/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/' Subject];
 
 % define the pfm directory
-PfmDir = ['/scratch/network/mattonim/pfm_output/' Subject '/pfm/'];
+PfmDir = ['/scratch/network/mattonim/pfm_output/' Subject '/pfm-08/'];
 
 % define fs_lr_32k midthickness surfaces
 MidthickSurfs{1} = [Subdir '/MNINonLinear/fsaverage_LR32k/' Subject '.L.midthickness.32k_fs_LR.surf.gii'];
