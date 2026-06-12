@@ -11,9 +11,6 @@ SUBLIST="/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist_in
 # Read subjects from include list, skip blank lines
 mapfile -t unique_subjects < <(grep -v '^[[:space:]]*$' "$SUBLIST")
 
-# Get unique subjects and sort them numerically
-unique_subjects=($(printf '%s\n' "${subjects[@]}" | sort -u | sort -n))
-
 # First pass: collect all unique network names across all subjects (from both original and adjusted)
 declare -A all_networks
 
