@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import numpy as np
 
-FC_DIR = '/scratch/network/mattonim/pfm_output/connectivity_results'
+FC_DIR = '/scratch/network/mattonim/pfm_output/connectivity_results_month08'
 OUTPUT_DIR = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives'
 
 def extract_upper_triangle(df):
@@ -50,7 +50,7 @@ def create_summary(fc_type):
     summary_df = pd.DataFrame(all_data, columns=['Subject'] + all_pairs)
     
     # Save
-    output_file = os.path.join(OUTPUT_DIR, f'{fc_type}_FC_summary.txt')
+    output_file = os.path.join(OUTPUT_DIR, f'{fc_type}_FC_summary_month08.txt')
     summary_df.to_csv(output_file, sep='\t', index=False)
     
     print(f"Saved: {output_file}\n")

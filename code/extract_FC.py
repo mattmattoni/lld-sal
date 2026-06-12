@@ -12,7 +12,7 @@ from datetime import datetime
 SUBJECT_LIST = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist_include.txt'
 PFM_BASE_DIR = '/scratch/network/mattonim/pfm_output'
 PARCELLATION_PATH = '/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/SUBJECT/MNINonLinear/fsaverage_LR32k/SUBJECT.aparc.32k_fs_LR.dlabel.nii'
-OUTPUT_BASE_DIR = '/scratch/network/mattonim/pfm_output/connectivity_results'
+OUTPUT_BASE_DIR = '/scratch/network/mattonim/pfm_output/connectivity_results_month08'
 NO_PLOTS = False
 
 # Desikan-Killiany parcel IDs
@@ -146,7 +146,7 @@ def save_results(output_dir, subject_id, comp_fc, comp_names, net_fc, net_names,
 
 
 def process_subject(subject_id):
-    pfm_dir = os.path.join(PFM_BASE_DIR, subject_id, 'pfm')
+    pfm_dir = os.path.join(PFM_BASE_DIR, subject_id, 'pfm-08')
     parc_file = PARCELLATION_PATH.replace('SUBJECT', subject_id)
     
     if not os.path.exists(pfm_dir):

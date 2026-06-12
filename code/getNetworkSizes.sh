@@ -1,41 +1,15 @@
 #!/bin/bash
 
-OUTPUT="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/NetworkSizes.csv"
-OUTPUT_ADJUSTED="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/NetworkSizes_adjusted.csv"
+OUTPUT="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/NetworkSizes_month08.csv"
+OUTPUT_ADJUSTED="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/NetworkSizes_adjusted_month08.csv"
 BASE_DIR="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt"
 PFM_DIR="/scratch/network/mattonim/pfm_output"
 
-# Collect all unique subject IDs from all Baseline folders across all sites
-subjects=()
+# Collect all unique subject IDs
+SUBLIST="/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/logs/sublist_include.txt"
 
-for SITE in UIC VUMC UPMC; do
-    # Get subjects from FS folders
-    if [ -d "$BASE_DIR/Baseline-FS-$SITE" ]; then
-        for subj_dir in $BASE_DIR/Baseline-FS-$SITE/*; do
-            if [ -d "$subj_dir" ]; then
-                subjects+=("$(basename $subj_dir)")
-            fi
-        done
-    fi
-    
-    # Get subjects from REST1 folders
-    if [ -d "$BASE_DIR/Baseline-fMRI_REST1-$SITE" ]; then
-        for subj_dir in $BASE_DIR/Baseline-fMRI_REST1-$SITE/*; do
-            if [ -d "$subj_dir" ]; then
-                subjects+=("$(basename $subj_dir)")
-            fi
-        done
-    fi
-    
-    # Get subjects from REST2 folders
-    if [ -d "$BASE_DIR/Baseline-fMRI_REST2-$SITE" ]; then
-        for subj_dir in $BASE_DIR/Baseline-fMRI_REST2-$SITE/*; do
-            if [ -d "$subj_dir" ]; then
-                subjects+=("$(basename $subj_dir)")
-            fi
-        done
-    fi
-done
+# Read subjects from include list, skip blank lines
+mapfile -t unique_subjects < <(grep -v '^[[:space:]]*$' "$SUBLIST")
 
 # Get unique subjects and sort them numerically
 unique_subjects=($(printf '%s\n' "${subjects[@]}" | sort -u | sort -n))
@@ -44,8 +18,8 @@ unique_subjects=($(printf '%s\n' "${subjects[@]}" | sort -u | sort -n))
 declare -A all_networks
 
 for SUBJ_ID in "${unique_subjects[@]}"; do
-    PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm/FunctionalNetworkSizes.txt"
-    PFM_FILE_ADJ="$PFM_DIR/$SUBJ_ID/pfm/FunctionalNetworkSizes_adjusted.txt"
+    PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm-08/FunctionalNetworkSizes.txt"
+    PFM_FILE_ADJ="$PFM_DIR/$SUBJ_ID/pfm-08/FunctionalNetworkSizes_adjusted.txt"
     
     # Read from original file
     if [ -f "$PFM_FILE" ]; then
@@ -79,8 +53,8 @@ echo "$header" > $OUTPUT_ADJUSTED
 
 # Process each unique subject
 for SUBJ_ID in "${unique_subjects[@]}"; do
-    PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm/FunctionalNetworkSizes.txt"
-    PFM_FILE_ADJ="$PFM_DIR/$SUBJ_ID/pfm/FunctionalNetworkSizes_adjusted.txt"
+    PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm-08/FunctionalNetworkSizes.txt"
+    PFM_FILE_ADJ="$PFM_DIR/$SUBJ_ID/pfm-08/FunctionalNetworkSizes_adjusted.txt"
     
     row_orig="$SUBJ_ID"
     row_adj="$SUBJ_ID"
