@@ -51,25 +51,25 @@ for SITE in "${SITES[@]}"; do
     mv "$dir" "$cleandir"
   done
   
-  #Clean task
-  cd "$TASK_DIR"
-  for dir in REMBRANDT-x-*; do
-
-    if [ "$SITE" = "UIC" ]; then
-      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
-    else
-      cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
-    fi
-
-    nested="$dir/$dir/out/PREPROC"
-
-    if [ -d "$nested" ]; then
-      mkdir -p "$cleandir"
-      mv "$nested" "$cleandir/"
-      rm -rf "$dir"
-    else
-      echo "Skipping $dir (no PREPROC found)"
-    fi
-
-  done
+  ##Clean task
+  #cd "$TASK_DIR"
+  #for dir in REMBRANDT-x-*; do
+#
+  #  if [ "$SITE" = "UIC" ]; then
+  #    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-3REM([0-9]+)-.*/\1/')
+  #  else
+  #    cleandir=$(echo "$dir" | sed -E 's/^REMBRANDT-x-([0-9]+)-.*/\1/')
+  #  fi
+#
+  #  nested="$dir/$dir/out/PREPROC"
+#
+  #  if [ -d "$nested" ]; then
+  #    mkdir -p "$cleandir"
+  #    mv "$nested" "$cleandir/"
+  #    rm -rf "$dir"
+  #  else
+  #    echo "Skipping $dir (no PREPROC found)"
+  #  fi
+#
+  #done
 done
