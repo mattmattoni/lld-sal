@@ -19,7 +19,7 @@ nWorkers = 5;
 Subdir = ['/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/data_hcp/' Subject];
 
 % define & create the pfm directory;
-PfmDir = ['/scratch/network/mattonim/pfm_output/' Subject '/pfm-08/'];
+PfmDir = ['/scratch/network/mattonim/pfm_output/' Subject '/pfm-16/'];
 mkdir(PfmDir);
 
 % count the number of imaging sessions;
@@ -32,7 +32,7 @@ ConcatenatedData = [];
 for i = 1:nSessions
     
     % count the number of runs in this session
-    allRuns = dir([Subdir '/MNINonLinear/Results/month08*']);
+    allRuns = dir([Subdir '/MNINonLinear/Results/month16*']);
     allRuns = allRuns([allRuns.isdir]);
 
     nRuns = length(allRuns);
