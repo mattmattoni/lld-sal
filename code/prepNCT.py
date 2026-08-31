@@ -6,7 +6,26 @@ import nibabel as nib
 import scipy.io as sio
 import os
 import subprocess
+import sys
+import signal
 from pathlib import Path
+
+# Force line-buffered stdout so log file updates live even when redirected by SLURM
+sys.stdout.reconfigure(line_buffering=True)
+
+# Max seconds to let one wb_command call run before treating it as hung
+WB_TIMEOUT = 1800
+
+# Max seconds to let the nibabel load/process/save step run before treating it as hung
+LOAD_TIMEOUT = 900
+
+class StepTimeout(Exception):
+    pass
+
+def _alarm_handler(signum, frame):
+    raise StepTimeout()
+
+signal.signal(signal.SIGALRM, _alarm_handler)
 
 # Paths
 PFM_BASE = "/scratch/network/mattonim/pfm_output"
@@ -84,8 +103,25 @@ for idx, subj in enumerate(all_subjects, 1):
         ]
 
         
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=WB_TIMEOUT)
+        except subprocess.TimeoutExpired:
+            print(f"    WARNING: wb_command timed out after {WB_TIMEOUT}s on community {community}, skipping")
+            results.append({
+                'Subject': subj,
+                'Community': community,
+                'Network': row['Network'],
+                'FC_Similarity': row['FC_Similarity'],
+                'Spatial_Score': row['Spatial_Score'],
+                'Confidence': confidence,
+                'Alt_1_Network': row['Alt_1_Network'],
+                'Alt_1_FC_Similarity': row['Alt_1_FC_Similarity'],
+                'Alt_1_Spatial_Score': row['Alt_1_Spatial_Score'],
+                'nct_input_file': 'NA',
+                'config_file': 'NA'
+            })
+            continue
+
         if result.returncode != 0:
             print(f"    WARNING: Failed to extract community {community}")
             print(f"    STDERR: {result.stderr}") 
@@ -106,6 +142,7 @@ for idx, subj in enumerate(all_subjects, 1):
             continue
         
         # Load the dscalar file
+        signal.alarm(LOAD_TIMEOUT)
         try:
             cifti = nib.load(temp_dscalar)
             
@@ -179,12 +216,32 @@ for idx, subj in enumerate(all_subjects, 1):
                 'nct_input_file': mat_file,
                 'config_file': config_file
             })
-            
+
+        except StepTimeout:
+            print(f"    WARNING: load/process step timed out after {LOAD_TIMEOUT}s on community {community}, skipping")
+            if os.path.exists(temp_dscalar):
+                os.remove(temp_dscalar)
+            results.append({
+                'Subject': subj,
+                'Community': community,
+                'Network': row['Network'],
+                'FC_Similarity': row['FC_Similarity'],
+                'Spatial_Score': row['Spatial_Score'],
+                'Confidence': confidence,
+                'Alt_1_Network': row['Alt_1_Network'],
+                'Alt_1_FC_Similarity': row['Alt_1_FC_Similarity'],
+                'Alt_1_Spatial_Score': row['Alt_1_Spatial_Score'],
+                'nct_input_file': 'NA',
+                'config_file': 'NA'
+            })
+            continue
         except Exception as e:
             print(f"    ERROR: {e}")
             if os.path.exists(temp_dscalar):
                 os.remove(temp_dscalar)
             continue
+        finally:
+            signal.alarm(0)
     
     print(f"  Completed {subj}")
 
