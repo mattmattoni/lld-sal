@@ -6,9 +6,9 @@ import os
 from pathlib import Path
 
 # Paths
-PREP_CSV = "/projects/psych_oajilore_chi/mattonim/lld-sal/derivatives/salience_communities_prep_month08.csv"
-OUTPUT_CSV = "/projects/psych_oajilore_chi/mattonim/lld-sal/derivatives/salience_communities_NCT_results_month08.csv"
-NCT_OUTPUT_BASE = "/scratch/network/mattonim/pfm_output/nct_results_month08"
+PREP_CSV = "/projects/psych_oajilore_chi/mattonim/lld-sal/derivatives/salience_communities_prep_month16.csv"
+OUTPUT_CSV = "/projects/psych_oajilore_chi/mattonim/lld-sal/derivatives/salience_communities_NCT_results_month16.csv"
+NCT_OUTPUT_BASE = "/scratch/network/mattonim/pfm_output/nct_results_month16"
 
 # Create output directory
 os.makedirs(NCT_OUTPUT_BASE, exist_ok=True)

@@ -10,7 +10,7 @@ def update_network_labels():
     """
     
     # File paths
-    validated_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validated_assignments_month08.csv'
+    validated_file = '/home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validated_assignments_month16.csv'
     pfm_base = '/scratch/network/mattonim/pfm_output'
     
     print("UPDATING NETWORK LABELS WITH MANUAL DECISIONS")
@@ -40,7 +40,7 @@ def update_network_labels():
         network_labels_path = os.path.join(
             pfm_base,
             subject_str,
-            'pfm-08',
+            'pfm-16',
             'Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels.xls'
         )
         
@@ -94,7 +94,7 @@ def update_network_labels():
             output_path = os.path.join(
                 pfm_base,
                 subject_str,
-                'pfm-08',
+                'pfm-16',
                 'Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels+ManualDecisions.csv'
             )
             

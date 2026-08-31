@@ -8,7 +8,7 @@ import sys
 # Define paths
 PFM_BASE = "/scratch/network/mattonim/pfm_output"
 OUTPUT_DIR = "/projects/psych_oajilore_chi/mattonim/lld-sal/derivatives"
-OUTPUT_CSV = os.path.join(OUTPUT_DIR, "salience_communities_month08.csv")
+OUTPUT_CSV = os.path.join(OUTPUT_DIR, "salience_communities_month16.csv")
 
 # Create output directory
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -24,7 +24,7 @@ results = []
 
 # Loop through each subject
 for subj in subjects:
-    xls_file = os.path.join(PFM_BASE, subj, "pfm-08", 
+    xls_file = os.path.join(PFM_BASE, subj, "pfm-16", 
                             "Bipartite_PhysicalCommunities+AlgorithmicLabeling_NetworkLabels.xls")
     
     if not os.path.exists(xls_file):

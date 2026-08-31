@@ -11,9 +11,9 @@ from pathlib import Path
 # Paths
 PFM_BASE = "/scratch/network/mattonim/pfm_output"
 DERIVATIVES = "/projects/psych_oajilore_chi/mattonim/lld-sal/derivatives"
-INPUT_CSV = os.path.join(DERIVATIVES, "salience_communities_month08.csv")
-OUTPUT_CSV = os.path.join(DERIVATIVES, "salience_communities_prep_month08.csv")
-NCT_INPUT_DIR = os.path.join(PFM_BASE, "nct_inputs", "month08")
+INPUT_CSV = os.path.join(DERIVATIVES, "salience_communities_month16.csv")
+OUTPUT_CSV = os.path.join(DERIVATIVES, "salience_communities_prep_month16.csv")
+NCT_INPUT_DIR = os.path.join(PFM_BASE, "nct_inputs", "month16")
 
 # Workbench path
 WB_COMMAND = "/home/mattonim/workbench/bin_linux64/wb_command"
@@ -50,7 +50,7 @@ for idx, subj in enumerate(all_subjects, 1):
     print(f"  Found {len(subj_data)} salience communities")
     
     # Path to dlabel file
-    dlabel_file = os.path.join(PFM_BASE, subj, "pfm-08",
+    dlabel_file = os.path.join(PFM_BASE, subj, "pfm-16",
                            "Bipartite_PhysicalCommunities.dtseries.nii")
     
     if not os.path.exists(dlabel_file):

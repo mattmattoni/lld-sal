@@ -67,7 +67,7 @@ parallel --jobs 4 --line-buffer \
 
 echo "PIPELINE COMPLETED"
 echo "Output files:"
-echo "Validation results: /home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validated_assignment_month08s.csv"
-echo "Validation summary: /home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validation_summary_month08.txt"
-echo "NetworkLabels files: /scratch/network/mattonim/pfm_output/*/pfm-08/*+ManualDecisions.xls"
-echo "Adjusted networks: /scratch/network/mattonim/pfm_output/*/pfm-08/*_adjusted.*"
+echo "Validation results: /home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validated_assignment_month16s.csv"
+echo "Validation summary: /home/mattonim/psych_oajilore_chi_link/mattonim/lld-sal/derivatives/validation_summary_month16.txt"
+echo "NetworkLabels files: /scratch/network/mattonim/pfm_output/*/pfm-16/*+ManualDecisions.xls"
+echo "Adjusted networks: /scratch/network/mattonim/pfm_output/*/pfm-16/*_adjusted.*"
