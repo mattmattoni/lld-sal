@@ -21,9 +21,9 @@ RUNS=(1 2)
 for SITE in "${SITES[@]}"; do
     for RUN in "${RUNS[@]}"; do
 
-    FS_SITE=Month16-FS-$SITE 
-    FMRI_SITE=Month16-run$RUN-$SITE
-    FUNC_LABEL=month16-rest-$RUN
+    FS_SITE=Month24-FS-$SITE 
+    FMRI_SITE=Month24-run$RUN-$SITE
+    FUNC_LABEL=month24-rest-$RUN
 
     export CIFTIFY_IMG PROJECT_DIR FS_SITE FMRI_SITE FUNC_LABEL
 
