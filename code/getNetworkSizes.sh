@@ -1,7 +1,7 @@
 #!/bin/bash
 
-OUTPUT="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/NetworkSizes_month08.csv"
-OUTPUT_ADJUSTED="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/NetworkSizes_adjusted_month08.csv"
+OUTPUT="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/NetworkSizes_month16.csv"
+OUTPUT_ADJUSTED="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt/derivatives/NetworkSizes_adjusted_month16.csv"
 BASE_DIR="/home/mattonim/psych_oajilore_chi_link/mattonim/rembrandt"
 PFM_DIR="/scratch/network/mattonim/pfm_output"
 
@@ -15,8 +15,8 @@ mapfile -t unique_subjects < <(grep -v '^[[:space:]]*$' "$SUBLIST")
 declare -A all_networks
 
 for SUBJ_ID in "${unique_subjects[@]}"; do
-    PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm-08/FunctionalNetworkSizes.txt"
-    PFM_FILE_ADJ="$PFM_DIR/$SUBJ_ID/pfm-08/FunctionalNetworkSizes_adjusted.txt"
+    PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm-16/FunctionalNetworkSizes.txt"
+    PFM_FILE_ADJ="$PFM_DIR/$SUBJ_ID/pfm-16/FunctionalNetworkSizes_adjusted.txt"
     
     # Read from original file
     if [ -f "$PFM_FILE" ]; then
@@ -50,8 +50,8 @@ echo "$header" > $OUTPUT_ADJUSTED
 
 # Process each unique subject
 for SUBJ_ID in "${unique_subjects[@]}"; do
-    PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm-08/FunctionalNetworkSizes.txt"
-    PFM_FILE_ADJ="$PFM_DIR/$SUBJ_ID/pfm-08/FunctionalNetworkSizes_adjusted.txt"
+    PFM_FILE="$PFM_DIR/$SUBJ_ID/pfm-16/FunctionalNetworkSizes.txt"
+    PFM_FILE_ADJ="$PFM_DIR/$SUBJ_ID/pfm-16/FunctionalNetworkSizes_adjusted.txt"
     
     row_orig="$SUBJ_ID"
     row_adj="$SUBJ_ID"
